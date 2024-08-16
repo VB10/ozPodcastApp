@@ -21,9 +21,7 @@ final class HomePresenter: ViewToPresenterHomeProtocol {
         self.view = view
     }
 
-    func onLikePressed(index: Int) {
-        
-    }
+    func onLikePressed(index: Int) {}
 }
 
 extension HomePresenter: InteractorToPresenterHomeProtocol {
