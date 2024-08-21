@@ -23,7 +23,7 @@ final class HomeView: BaseView<HomeViewController> {
     /// sample method to setup layout
     private lazy var podcastTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello "
+        label.text = LocaleKeys.welcomeUser.localized(with: "Veli")
         label.font = ThemeManager.deafultTheme.fontTheme.titleBoldFont
         return label
     }()
