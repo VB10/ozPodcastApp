@@ -23,8 +23,8 @@ final class HomeView: BaseView<HomeViewController> {
     /// sample method to setup layout
     private lazy var podcastTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello "
-//        label.font = Theme.defaultTheme.themeFont.subtitleFontBoldSize
+        label.text = LocaleKeys.welcomeUser.localized(with: "Veli")
+        label.font = ThemeManager.deafultTheme.fontTheme.titleBoldFont
         return label
     }()
 
@@ -43,7 +43,7 @@ final class HomeView: BaseView<HomeViewController> {
 
     private func setupConstraints() {
         podcastTitleLabel.snp.makeConstraints { make in
-            make.height.width.equalTo(50)
+            make.height.equalTo(50)
             make.center.equalToSuperview()
         }
         loadingIndicator.snp.makeConstraints { make in
