@@ -31,6 +31,7 @@ final class NetworkManagerDemoTests: XCTestCase {
 struct MusicResponse: Decodable {
     let uNm: String
     let name: String
+    let ctx: String
 }
 
 enum MockPath: String, NetworkPathProtocol {
