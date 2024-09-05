@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54A255D52C84097A001738CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D42C84097A001738CC /* NetworkManager.swift */; };
+		54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D62C840AD8001738CC /* NetworkConfig.swift */; };
+		54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D82C840B2C001738CC /* NetworkPath.swift */; };
+		54A255DB2C840BDC001738CC /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255DA2C840BDC001738CC /* NetworkMethod.swift */; };
+		54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255DC2C840E1D001738CC /* NetworkError.swift */; };
+		54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */; };
+		54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255E62C841014001738CC /* ozPodcastAppTests.swift */; };
+		54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */; };
 		54D8B0702C6D792500749F67 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8B06F2C6D792500749F67 /* BaseView.swift */; };
 		54D8B0732C6D7A9A00749F67 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54D8B0722C6D7A9A00749F67 /* RealmSwift */; };
 		54E09D662C75656E00AD17FC /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D652C75656E00AD17FC /* AppTheme.swift */; };
@@ -45,6 +53,16 @@
 		54FC8AB62C62E8BD0025A13B /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 54FC8AB52C62E8BD0025A13B /* BottomSheet */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		54A255E82C841014001738CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54FC8A522C62D8E20025A13B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54FC8A592C62D8E20025A13B;
+			remoteInfo = ozPodcastApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		54D8B0752C6D7A9A00749F67 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -59,6 +77,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		54A255D42C84097A001738CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		54A255D62C840AD8001738CC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		54A255D82C840B2C001738CC /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
+		54A255DA2C840BDC001738CC /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		54A255DC2C840E1D001738CC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		54A255E42C841014001738CC /* ozPodcastAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ozPodcastAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A255E62C841014001738CC /* ozPodcastAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ozPodcastAppTests.swift; sourceTree = "<group>"; };
+		54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDemoTests.swift; sourceTree = "<group>"; };
 		54D8B06F2C6D792500749F67 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		54E09D652C75656E00AD17FC /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		54E09D682C7565AD00AD17FC /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
@@ -93,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		54A255E12C841014001738CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54FC8A572C62D8E20025A13B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +144,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54A255D22C840844001738CC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				54A255D42C84097A001738CC /* NetworkManager.swift */,
+				54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		54A255D32C840853001738CC /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				54A255D82C840B2C001738CC /* NetworkPath.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		54A255E52C841014001738CC /* ozPodcastAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				54A255ED2C84101F001738CC /* Feature */,
+				54A255E62C841014001738CC /* ozPodcastAppTests.swift */,
+			);
+			path = ozPodcastAppTests;
+			sourceTree = "<group>";
+		};
+		54A255ED2C84101F001738CC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
 		54D8B0712C6D7A9A00749F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,30 +334,19 @@
 		54EB8D742C6C27560049AEC6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				54A255D32C840853001738CC /* EndPoint */,
+				54A255D22C840844001738CC /* Manager */,
 				54EB8D772C6C276C0049AEC6 /* Models */,
-				54EB8D762C6C27650049AEC6 /* EndPoints */,
-				54EB8D752C6C275C0049AEC6 /* Manager */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		54EB8D752C6C275C0049AEC6 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		54EB8D762C6C27650049AEC6 /* EndPoints */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EndPoints;
 			sourceTree = "<group>";
 		};
 		54EB8D772C6C276C0049AEC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				54A255D62C840AD8001738CC /* NetworkConfig.swift */,
+				54A255DA2C840BDC001738CC /* NetworkMethod.swift */,
+				54A255DC2C840E1D001738CC /* NetworkError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				54FC8A5C2C62D8E20025A13B /* ozPodcastApp */,
+				54A255E52C841014001738CC /* ozPodcastAppTests */,
 				54FC8A5B2C62D8E20025A13B /* Products */,
 				54D8B0712C6D7A9A00749F67 /* Frameworks */,
 			);
@@ -369,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				54FC8A5A2C62D8E20025A13B /* ozPodcastApp.app */,
+				54A255E42C841014001738CC /* ozPodcastAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +449,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		54A255E32C841014001738CC /* ozPodcastAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54A255EA2C841014001738CC /* Build configuration list for PBXNativeTarget "ozPodcastAppTests" */;
+			buildPhases = (
+				54A255E02C841014001738CC /* Sources */,
+				54A255E12C841014001738CC /* Frameworks */,
+				54A255E22C841014001738CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54A255E92C841014001738CC /* PBXTargetDependency */,
+			);
+			name = ozPodcastAppTests;
+			productName = ozPodcastAppTests;
+			productReference = 54A255E42C841014001738CC /* ozPodcastAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		54FC8A592C62D8E20025A13B /* ozPodcastApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54FC8A6E2C62D8E30025A13B /* Build configuration list for PBXNativeTarget "ozPodcastApp" */;
@@ -428,6 +505,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					54A255E32C841014001738CC = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 54FC8A592C62D8E20025A13B;
+					};
 					54FC8A592C62D8E20025A13B = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -458,11 +539,19 @@
 			projectRoot = "";
 			targets = (
 				54FC8A592C62D8E20025A13B /* ozPodcastApp */,
+				54A255E32C841014001738CC /* ozPodcastAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		54A255E22C841014001738CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54FC8A582C62D8E20025A13B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,10 +595,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		54A255E02C841014001738CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */,
+				54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54FC8A562C62D8E20025A13B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A255D52C84097A001738CC /* NetworkManager.swift in Sources */,
+				54A255DB2C840BDC001738CC /* NetworkMethod.swift in Sources */,
 				54FC8A5E2C62D8E20025A13B /* AppDelegate.swift in Sources */,
 				54E09D872C756CB300AD17FC /* LocaleKeys.swift in Sources */,
 				54E09D662C75656E00AD17FC /* AppTheme.swift in Sources */,
@@ -517,11 +617,15 @@
 				54E09D6B2C75662000AD17FC /* ThemeFont.swift in Sources */,
 				54EB8D8E2C6C28CD0049AEC6 /* NavigationViewProtocol.swift in Sources */,
 				54E09D6F2C75671300AD17FC /* ButtonTheme.swift in Sources */,
+				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
 				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
+				54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */,
 				54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */,
+				54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */,
 				54EB8D862C6C28780049AEC6 /* HomeRouter.swift in Sources */,
 				54EB8D872C6C28780049AEC6 /* HomeViewController.swift in Sources */,
+				54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */,
 				54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */,
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,
 				54E09D6D2C7566CD00AD17FC /* TextFieldTheme.swift in Sources */,
@@ -531,6 +635,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54A255E92C841014001738CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54FC8A592C62D8E20025A13B /* ozPodcastApp */;
+			targetProxy = 54A255E82C841014001738CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		54FC8A682C62D8E30025A13B /* LaunchScreen.storyboard */ = {
@@ -544,6 +656,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		54A255EB2C841014001738CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vb10.ozPodcastAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ozPodcastApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ozPodcastApp";
+			};
+			name = Debug;
+		};
+		54A255EC2C841014001738CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vb10.ozPodcastAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ozPodcastApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ozPodcastApp";
+			};
+			name = Release;
+		};
 		54FC8A6C2C62D8E30025A13B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +866,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		54A255EA2C841014001738CC /* Build configuration list for PBXNativeTarget "ozPodcastAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54A255EB2C841014001738CC /* Debug */,
+				54A255EC2C841014001738CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		54FC8A552C62D8E20025A13B /* Build configuration list for PBXProject "ozPodcastApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
