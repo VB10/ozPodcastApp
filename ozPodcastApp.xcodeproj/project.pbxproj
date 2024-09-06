@@ -17,6 +17,11 @@
 		54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */; };
 		54D8B0702C6D792500749F67 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8B06F2C6D792500749F67 /* BaseView.swift */; };
 		54D8B0732C6D7A9A00749F67 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54D8B0722C6D7A9A00749F67 /* RealmSwift */; };
+		54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDEBB12C8A73C200345146 /* LocalDatabse.swift */; };
+		54DDEBB42C8A751900345146 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDEBB32C8A751900345146 /* RealmDatabase.swift */; };
+		54DDEBB62C8A7B6400345146 /* RealmDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDEBB52C8A7B6400345146 /* RealmDatabaseTests.swift */; };
+		54DDEBB92C8A7E5400345146 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54DDEBB82C8A7E5400345146 /* RealmSwift */; };
+		54DDEBBA2C8A7E5400345146 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54DDEBB82C8A7E5400345146 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		54E09D662C75656E00AD17FC /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D652C75656E00AD17FC /* AppTheme.swift */; };
 		54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D682C7565AD00AD17FC /* ThemeColor.swift */; };
 		54E09D6B2C75662000AD17FC /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D6A2C75662000AD17FC /* ThemeFont.swift */; };
@@ -74,6 +79,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54DDEBBB2C8A7E5400345146 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				54DDEBBA2C8A7E5400345146 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +103,9 @@
 		54A255E62C841014001738CC /* ozPodcastAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ozPodcastAppTests.swift; sourceTree = "<group>"; };
 		54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDemoTests.swift; sourceTree = "<group>"; };
 		54D8B06F2C6D792500749F67 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		54DDEBB12C8A73C200345146 /* LocalDatabse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabse.swift; sourceTree = "<group>"; };
+		54DDEBB32C8A751900345146 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		54DDEBB52C8A7B6400345146 /* RealmDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseTests.swift; sourceTree = "<group>"; };
 		54E09D652C75656E00AD17FC /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		54E09D682C7565AD00AD17FC /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		54E09D6A2C75662000AD17FC /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
@@ -124,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DDEBB92C8A7E5400345146 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */,
+				54DDEBB52C8A7B6400345146 /* RealmDatabaseTests.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -364,6 +385,7 @@
 		54EB8D792C6C277F0049AEC6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				54DDEBB12C8A73C200345146 /* LocalDatabse.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -371,6 +393,7 @@
 		54EB8D7A2C6C27860049AEC6 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				54DDEBB32C8A751900345146 /* RealmDatabase.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -456,6 +479,7 @@
 				54A255E02C841014001738CC /* Sources */,
 				54A255E12C841014001738CC /* Frameworks */,
 				54A255E22C841014001738CC /* Resources */,
+				54DDEBBB2C8A7E5400345146 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,6 +487,9 @@
 				54A255E92C841014001738CC /* PBXTargetDependency */,
 			);
 			name = ozPodcastAppTests;
+			packageProductDependencies = (
+				54DDEBB82C8A7E5400345146 /* RealmSwift */,
+			);
 			productName = ozPodcastAppTests;
 			productReference = 54A255E42C841014001738CC /* ozPodcastAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -601,6 +628,7 @@
 			files = (
 				54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */,
 				54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */,
+				54DDEBB62C8A7B6400345146 /* RealmDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DDEBB42C8A751900345146 /* RealmDatabase.swift in Sources */,
 				54A255D52C84097A001738CC /* NetworkManager.swift in Sources */,
 				54A255DB2C840BDC001738CC /* NetworkMethod.swift in Sources */,
 				54FC8A5E2C62D8E20025A13B /* AppDelegate.swift in Sources */,
@@ -620,6 +649,7 @@
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
 				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
+				54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */,
 				54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */,
 				54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */,
 				54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */,
@@ -964,6 +994,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		54D8B0722C6D7A9A00749F67 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54FC8AAB2C62E7C40025A13B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		54DDEBB82C8A7E5400345146 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54FC8AAB2C62E7C40025A13B /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
