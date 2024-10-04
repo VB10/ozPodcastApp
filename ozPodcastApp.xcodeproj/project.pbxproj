@@ -15,6 +15,8 @@
 		54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */; };
 		54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255E62C841014001738CC /* ozPodcastAppTests.swift */; };
 		54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */; };
+		54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */; };
+		54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */; };
 		54D8B0702C6D792500749F67 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8B06F2C6D792500749F67 /* BaseView.swift */; };
 		54D8B0732C6D7A9A00749F67 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54D8B0722C6D7A9A00749F67 /* RealmSwift */; };
 		54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDEBB12C8A73C200345146 /* LocalDatabse.swift */; };
@@ -102,6 +104,8 @@
 		54A255E42C841014001738CC /* ozPodcastAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ozPodcastAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A255E62C841014001738CC /* ozPodcastAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ozPodcastAppTests.swift; sourceTree = "<group>"; };
 		54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDemoTests.swift; sourceTree = "<group>"; };
+		54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPubliser.swift; sourceTree = "<group>"; };
 		54D8B06F2C6D792500749F67 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		54DDEBB12C8A73C200345146 /* LocalDatabse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabse.swift; sourceTree = "<group>"; };
 		54DDEBB32C8A751900345146 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
@@ -199,6 +203,22 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		54AD9EEB2CAF6C00009E39B7 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */,
+			);
+			path = SubFeatures;
+			sourceTree = "<group>";
+		};
 		54D8B0712C6D7A9A00749F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +250,7 @@
 		54EB8D662C6C26A20049AEC6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				54AD9EEB2CAF6C00009E39B7 /* Container */,
 				54EB8D8A2C6C28A00049AEC6 /* Base */,
 				54EB8D6A2C6C26C40049AEC6 /* Constants */,
 				54EB8D692C6C26BD0049AEC6 /* Protocols */,
@@ -304,6 +325,7 @@
 		54EB8D6F2C6C27320049AEC6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */,
 				54EB8D7D2C6C28690049AEC6 /* Home */,
 			);
 			path = Features;
@@ -649,6 +671,7 @@
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
 				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
+				54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */,
 				54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */,
 				54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */,
 				54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */,
@@ -660,6 +683,7 @@
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,
 				54E09D6D2C7566CD00AD17FC /* TextFieldTheme.swift in Sources */,
 				54EB8D882C6C28780049AEC6 /* HomeInteractor.swift in Sources */,
+				54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */,
 				54EB8D892C6C28780049AEC6 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
