@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+final class DataPubliser {}
