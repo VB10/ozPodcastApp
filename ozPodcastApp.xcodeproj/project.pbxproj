@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FC7DE512CCE5A8D000819E7 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7DE502CCE5A8D000819E7 /* LoggerManager.swift */; };
+		1FC7DE532CCE5A9B000819E7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7DE522CCE5A9B000819E7 /* NetworkLogger.swift */; };
 		54A255D52C84097A001738CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D42C84097A001738CC /* NetworkManager.swift */; };
 		54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D62C840AD8001738CC /* NetworkConfig.swift */; };
 		54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D82C840B2C001738CC /* NetworkPath.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1FC7DE502CCE5A8D000819E7 /* LoggerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
+		1FC7DE522CCE5A9B000819E7 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		54A255D42C84097A001738CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54A255D62C840AD8001738CC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		54A255D82C840B2C001738CC /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
@@ -164,9 +168,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FC7DE4F2CCE5A83000819E7 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				1FC7DE502CCE5A8D000819E7 /* LoggerManager.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		54A255D22C840844001738CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1FC7DE522CCE5A9B000819E7 /* NetworkLogger.swift */,
 				54A255D42C84097A001738CC /* NetworkManager.swift */,
 				54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */,
 			);
@@ -230,6 +243,7 @@
 		54EB8D662C6C26A20049AEC6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1FC7DE4F2CCE5A83000819E7 /* Logger */,
 				54EB8D8A2C6C28A00049AEC6 /* Base */,
 				54EB8D6A2C6C26C40049AEC6 /* Constants */,
 				54EB8D692C6C26BD0049AEC6 /* Protocols */,
@@ -651,12 +665,14 @@
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
 				54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */,
 				54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */,
+				1FC7DE532CCE5A9B000819E7 /* NetworkLogger.swift in Sources */,
 				54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */,
 				54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */,
 				54EB8D862C6C28780049AEC6 /* HomeRouter.swift in Sources */,
 				54EB8D872C6C28780049AEC6 /* HomeViewController.swift in Sources */,
 				54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */,
 				54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */,
+				1FC7DE512CCE5A8D000819E7 /* LoggerManager.swift in Sources */,
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,
 				54E09D6D2C7566CD00AD17FC /* TextFieldTheme.swift in Sources */,
 				54EB8D882C6C28780049AEC6 /* HomeInteractor.swift in Sources */,

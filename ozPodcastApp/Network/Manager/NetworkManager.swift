@@ -11,11 +11,19 @@ import Foundation
 final class NetworkManager: NetworkManagerProtocol {
     private let config: NetworkConfig
     private let decoder: JSONDecoder
+    private let session: Session
+
 
     init(config: NetworkConfig, decoder: JSONDecoder = JSONDecoder()) {
+        let eventMonitor: NetworkEventMonitor = NetworkEventMonitor();
+        
         self.config = config
         self.decoder = decoder
         self.decoder.dateDecodingStrategy = .iso8601
+        
+        self.session = Session(
+            eventMonitors: [eventMonitor]
+        )
     }
 
     /// Send your request
@@ -28,32 +36,31 @@ final class NetworkManager: NetworkManagerProtocol {
     /// - Returns: Result with sucses responre or error
     func send<T: Decodable>(
         path: NetworkPathProtocol,
-        // TODO: NetworkMethod global
         method: NetworkMethod,
         type: T.Type,
         body: Encodable? = nil,
         paramater: Parameters? = nil
     ) async -> Result<T, Error> {
         let url = config.baseUrl + path.value
-        let reqeust: DataRequest
+        let request: DataRequest
 
-        // TODO: Seperate client object
+        // Create request based on whether body is provided
         if let body = body {
-            reqeust = AF.request(
+            request = session.request(
                 url,
                 method: method.alamofireMethod,
                 parameters: body,
                 encoder: JSONParameterEncoder.default
             )
         } else {
-            reqeust = AF.request(
+            request = session.request(
                 url,
                 method: method.alamofireMethod,
                 parameters: paramater
             )
         }
 
-        let response = await reqeust.validate()
+        let response = await request.validate()
             .serializingDecodable(T.self, decoder: decoder)
             .response
 
