@@ -52,6 +52,12 @@ final class HomeView: BaseView<HomeViewController> {
             make.bottom.equalToSuperview()
         }
     }
+
+    private func changeColorIndactor() {
+        runOnMain {
+            self.loadingIndicator.color = .red
+        }
+    }
 }
 
 #Preview {
