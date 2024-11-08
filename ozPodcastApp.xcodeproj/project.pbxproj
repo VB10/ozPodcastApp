@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		548EB8422CDD96C7001DB47E /* MainThread+Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8412CDD96A3001DB47E /* MainThread+Weak.swift */; };
+		548EB8442CDD9830001DB47E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8432CDD981F001DB47E /* UIFont+Extension.swift */; };
+		548EB8462CDD98C9001DB47E /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8452CDD98C1001DB47E /* UIWindow+Extension.swift */; };
+		548EB8482CDD995F001DB47E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8472CDD9957001DB47E /* Double+Extension.swift */; };
 		54A255D52C84097A001738CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D42C84097A001738CC /* NetworkManager.swift */; };
 		54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D62C840AD8001738CC /* NetworkConfig.swift */; };
 		54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D82C840B2C001738CC /* NetworkPath.swift */; };
@@ -95,6 +99,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		548EB8412CDD96A3001DB47E /* MainThread+Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainThread+Weak.swift"; sourceTree = "<group>"; };
+		548EB8432CDD981F001DB47E /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		548EB8452CDD98C1001DB47E /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		548EB8472CDD9957001DB47E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		54A255D42C84097A001738CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54A255D62C840AD8001738CC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		54A255D82C840B2C001738CC /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
@@ -270,6 +278,10 @@
 		54EB8D682C6C26B60049AEC6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				548EB8472CDD9957001DB47E /* Double+Extension.swift */,
+				548EB8452CDD98C1001DB47E /* UIWindow+Extension.swift */,
+				548EB8432CDD981F001DB47E /* UIFont+Extension.swift */,
+				548EB8412CDD96A3001DB47E /* MainThread+Weak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,12 +676,15 @@
 				54FC8A5E2C62D8E20025A13B /* AppDelegate.swift in Sources */,
 				54E09D872C756CB300AD17FC /* LocaleKeys.swift in Sources */,
 				54E09D662C75656E00AD17FC /* AppTheme.swift in Sources */,
+				548EB8482CDD995F001DB47E /* Double+Extension.swift in Sources */,
 				54FC8A602C62D8E20025A13B /* SceneDelegate.swift in Sources */,
 				54E09D6B2C75662000AD17FC /* ThemeFont.swift in Sources */,
 				54EB8D8E2C6C28CD0049AEC6 /* NavigationViewProtocol.swift in Sources */,
 				54E09D6F2C75671300AD17FC /* ButtonTheme.swift in Sources */,
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
+				548EB8462CDD98C9001DB47E /* UIWindow+Extension.swift in Sources */,
 				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
+				548EB8422CDD96C7001DB47E /* MainThread+Weak.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
 				54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */,
 				54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */,
@@ -678,6 +693,7 @@
 				54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */,
 				54EB8D862C6C28780049AEC6 /* HomeRouter.swift in Sources */,
 				54EB8D872C6C28780049AEC6 /* HomeViewController.swift in Sources */,
+				548EB8442CDD9830001DB47E /* UIFont+Extension.swift in Sources */,
 				54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */,
 				54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */,
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,

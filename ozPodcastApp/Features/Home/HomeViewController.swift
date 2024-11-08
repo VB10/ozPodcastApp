@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController, NavigationView {
         super.viewDidLoad()
         self.view = HomeView(self)
     }
-
+    
     // MARK: - Properties
 
     var presenter: ViewToPresenterHomeProtocol!
