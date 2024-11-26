@@ -1,6 +1,39 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "onboard_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Listing"
+          }
+        }
+      }
+    },
+    "onboard_sub_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discover your favorite podcast & listen to them anywhere!"
+          }
+        }
+      }
+    },
+    "onboard_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podcaster"
+          }
+        }
+      }
+    },
     "welcome" : {
       "extractionState" : "manual",
       "localizations" : {

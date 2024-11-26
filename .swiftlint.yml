@@ -1,0 +1,14 @@
+included:
+  - OzPodcastApp
+  
+
+opt_in_rules:
+  - trailing_whitespace
+
+
+disabled_rules:
+  - trailing_newline # (Optional: Disable this if you don’t care about the final newline issue.)
+
+# Optionally ignore specific file paths or folders
+excluded:
+  - Pods

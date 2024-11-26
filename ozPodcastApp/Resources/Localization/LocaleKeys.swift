@@ -7,21 +7,30 @@
 
 import Foundation
 
-enum LocaleKeys: String {
-    case welcomeMessage = "welcome"
-    case welcomeUser = "welcome_user"
+protocol Localizable: RawRepresentable where RawValue == String {
+    var localized: String { get }
+    func localized(with arguments: CVarArg...) -> String
 }
 
-extension LocaleKeys {
+enum LocaleKeys: String, Localizable {
+    case welcomeMessage = "welcome"
+    case welcomeUser = "welcome_user"
+
+    enum Onboard: String, Localizable {
+        case title = "onboard_title"
+        case description = "onboard_sub_title"
+        case button = "onboard_button"
+    }
+}
+
+extension Localizable {
     /// Localized your key
     var localized: String {
-        NSLocalizedString(self.rawValue, comment: "")
+        NSLocalizedString(rawValue, comment: "")
     }
 
-    /// Localized your key
-    /// - Parameter arguments: <#arguments
-    /// - Returns: Value with params
+    /// Localized with arguments
     func localized(with arguments: CVarArg...) -> String {
-        String(format: self.localized, arguments)
+        String(format: localized, arguments: arguments)
     }
 }

@@ -19,7 +19,7 @@ extension ButtonTheme {
         return ButtonTheme(
             font: ThemeFont.defaultTheme.titleFont,
             textColor: ThemeColor.defaultTheme.primaryColor,
-            backgroundColor: ThemeColor.defaultTheme.secondaryColor,
+            backgroundColor: .forgottenPurple,
             maximumLine: 2
         )
     }

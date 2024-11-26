@@ -13,11 +13,20 @@ class BaseView<T: UIViewController>: UIView, MainThreadRunner {
     init(_ controller: T) {
         self.controller = controller
         super.init(frame: .zero)
-//        backgroundColor = Theme.defaultTheme.themeColor.backgroundColor
+        //        backgroundColor = Theme.defaultTheme.themeColor.backgroundColor
         setupView()
     }
 
-    func setupView() { }
+    static var appTheme: AppTheme {
+        ThemeManager.deafultTheme
+    }
+
+    var currentTheme: AppTheme {
+        ThemeManager.deafultTheme
+    }
+
+    func setupView() {}
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
