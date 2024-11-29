@@ -397,7 +397,6 @@
 		54EB8D782C6C27790049AEC6 /* Stroage */ = {
 			isa = PBXGroup;
 			children = (
-				54EB8D7B2C6C278E0049AEC6 /* UserDeafult */,
 				54EB8D7A2C6C27860049AEC6 /* Realm */,
 				54EB8D792C6C277F0049AEC6 /* Manager */,
 			);
@@ -418,13 +417,6 @@
 				54DDEBB32C8A751900345146 /* RealmDatabase.swift */,
 			);
 			path = Realm;
-			sourceTree = "<group>";
-		};
-		54EB8D7B2C6C278E0049AEC6 /* UserDeafult */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserDeafult;
 			sourceTree = "<group>";
 		};
 		54EB8D7C2C6C27A20049AEC6 /* Application */ = {
