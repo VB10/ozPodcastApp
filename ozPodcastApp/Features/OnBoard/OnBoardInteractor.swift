@@ -9,6 +9,11 @@
 import Foundation
 
 final class OnBoardInteractor: PresenterToInteractorOnBoardProtocol {
+    func saveFirstLaunch() -> Bool {
+        /// TODO: cache it this data
+        return true
+    }
+    
 
     // MARK: Properties
     var presenter: InteractorToPresenterOnBoardProtocol?

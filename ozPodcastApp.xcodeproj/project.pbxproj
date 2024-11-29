@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5412C2652CF941DE009971C9 /* OnBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2602CF941DE009971C9 /* OnBoardInteractor.swift */; };
+		5412C2662CF941DE009971C9 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2642CF941DE009971C9 /* OnBoardViewController.swift */; };
+		5412C2672CF941DE009971C9 /* OnBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2612CF941DE009971C9 /* OnBoardPresenter.swift */; };
+		5412C2682CF941DE009971C9 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2632CF941DE009971C9 /* OnBoardView.swift */; };
+		5412C2692CF941DE009971C9 /* OnBoardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C25F2CF941DE009971C9 /* OnBoardContract.swift */; };
+		5412C26A2CF941DE009971C9 /* OnBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2622CF941DE009971C9 /* OnBoardRouter.swift */; };
+		5412C26D2CF9A484009971C9 /* ButtonPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C26C2CF9A481009971C9 /* ButtonPadding.swift */; };
+		5412C2702CF9A5A1009971C9 /* ProductRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C26F2CF9A59B009971C9 /* ProductRadius.swift */; };
 		54A255D52C84097A001738CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D42C84097A001738CC /* NetworkManager.swift */; };
 		54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D62C840AD8001738CC /* NetworkConfig.swift */; };
 		54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D82C840B2C001738CC /* NetworkPath.swift */; };
@@ -95,6 +103,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5412C25F2CF941DE009971C9 /* OnBoardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardContract.swift; sourceTree = "<group>"; };
+		5412C2602CF941DE009971C9 /* OnBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardInteractor.swift; sourceTree = "<group>"; };
+		5412C2612CF941DE009971C9 /* OnBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPresenter.swift; sourceTree = "<group>"; };
+		5412C2622CF941DE009971C9 /* OnBoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardRouter.swift; sourceTree = "<group>"; };
+		5412C2632CF941DE009971C9 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		5412C2642CF941DE009971C9 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
+		5412C26C2CF9A481009971C9 /* ButtonPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPadding.swift; sourceTree = "<group>"; };
+		5412C26F2CF9A59B009971C9 /* ProductRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRadius.swift; sourceTree = "<group>"; };
 		54A255D42C84097A001738CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54A255D62C840AD8001738CC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		54A255D82C840B2C001738CC /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
@@ -168,6 +184,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5412C25E2CF941CD009971C9 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5412C25F2CF941DE009971C9 /* OnBoardContract.swift */,
+				5412C2602CF941DE009971C9 /* OnBoardInteractor.swift */,
+				5412C2612CF941DE009971C9 /* OnBoardPresenter.swift */,
+				5412C2622CF941DE009971C9 /* OnBoardRouter.swift */,
+				5412C2632CF941DE009971C9 /* OnBoardView.swift */,
+				5412C2642CF941DE009971C9 /* OnBoardViewController.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		5412C26B2CF9A45B009971C9 /* Padding */ = {
+			isa = PBXGroup;
+			children = (
+				5412C26C2CF9A481009971C9 /* ButtonPadding.swift */,
+			);
+			path = Padding;
+			sourceTree = "<group>";
+		};
+		5412C26E2CF9A592009971C9 /* Radius */ = {
+			isa = PBXGroup;
+			children = (
+				5412C26F2CF9A59B009971C9 /* ProductRadius.swift */,
+			);
+			path = Radius;
+			sourceTree = "<group>";
+		};
 		54A255D22C840844001738CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +355,8 @@
 		54EB8D6D2C6C270E0049AEC6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5412C26E2CF9A592009971C9 /* Radius */,
+				5412C26B2CF9A45B009971C9 /* Padding */,
 				54E09D642C75655C00AD17FC /* Theme */,
 			);
 			path = Helpers;
@@ -325,6 +372,7 @@
 		54EB8D6F2C6C27320049AEC6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5412C25E2CF941CD009971C9 /* OnBoard */,
 				54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */,
 				54EB8D7D2C6C28690049AEC6 /* Home */,
 			);
@@ -494,6 +542,7 @@
 				54A255E12C841014001738CC /* Frameworks */,
 				54A255E22C841014001738CC /* Resources */,
 				54DDEBBB2C8A7E5400345146 /* Embed Frameworks */,
+				5412C2512CF94145009971C9 /* SwiftLint Completer */,
 			);
 			buildRules = (
 			);
@@ -615,6 +664,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5412C2512CF94145009971C9 /* SwiftLint Completer */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Completer";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint autocorrect\n    swiftlint\nfi\n";
+		};
 		54FC8AB32C62E8440025A13B /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,6 +726,13 @@
 				54FC8A602C62D8E20025A13B /* SceneDelegate.swift in Sources */,
 				54E09D6B2C75662000AD17FC /* ThemeFont.swift in Sources */,
 				54EB8D8E2C6C28CD0049AEC6 /* NavigationViewProtocol.swift in Sources */,
+				5412C26D2CF9A484009971C9 /* ButtonPadding.swift in Sources */,
+				5412C2652CF941DE009971C9 /* OnBoardInteractor.swift in Sources */,
+				5412C2662CF941DE009971C9 /* OnBoardViewController.swift in Sources */,
+				5412C2672CF941DE009971C9 /* OnBoardPresenter.swift in Sources */,
+				5412C2682CF941DE009971C9 /* OnBoardView.swift in Sources */,
+				5412C2692CF941DE009971C9 /* OnBoardContract.swift in Sources */,
+				5412C26A2CF941DE009971C9 /* OnBoardRouter.swift in Sources */,
 				54E09D6F2C75671300AD17FC /* ButtonTheme.swift in Sources */,
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
 				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
@@ -677,6 +751,7 @@
 				54EB8D882C6C28780049AEC6 /* HomeInteractor.swift in Sources */,
 				54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */,
 				54EB8D892C6C28780049AEC6 /* HomeView.swift in Sources */,
+				5412C2702CF9A5A1009971C9 /* ProductRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

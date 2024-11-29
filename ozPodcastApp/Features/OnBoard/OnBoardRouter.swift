@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class  OnBoardRouter: PresenterToRouterOnBoardProtocol {
+final class OnBoardRouter: PresenterToRouterOnBoardProtocol {
     // MARK: Static methods
 
     static func createModule() -> UIViewController {
@@ -30,5 +30,9 @@ final class  OnBoardRouter: PresenterToRouterOnBoardProtocol {
 
     init(navigation: NavigationView) {
         self.navigation = navigation
+    }
+
+    func navigateToMainScreen() {
+        navigation.present(HomeRouter.createModule())
     }
 }

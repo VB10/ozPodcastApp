@@ -11,6 +11,7 @@ struct ThemeFont {
     let titleBoldFont: UIFont
     let titleFont: UIFont
     let subTitleFont: UIFont
+    let subTitleBoldFont: UIFont
 
     private enum CustomFont: String {
         case bold
@@ -36,7 +37,8 @@ extension ThemeFont {
         return ThemeFont(
             titleBoldFont: ThemeFont.CustomFont.bold.value(fontSize: .headline),
             titleFont: ThemeFont.CustomFont.medium.value(fontSize: .headline),
-            subTitleFont: ThemeFont.CustomFont.regular.value(fontSize: .subheadline)
+            subTitleFont: ThemeFont.CustomFont.regular.value(fontSize: .subheadline),
+            subTitleBoldFont:    ThemeFont.CustomFont.bold.value(fontSize: .subheadline)
         )
     }
 }

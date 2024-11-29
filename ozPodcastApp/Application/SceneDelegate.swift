@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let viewController = HomeRouter.createModule()
         
-        AppContainer.shared.network
+//        AppContainer.shared.network
 
         let navigationController = UINavigationController(rootViewController: viewController)
 
