@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseView<T: UIViewController>: UIView {
+class BaseView<T: UIViewController>: UIView, MainThreadRunner {
     var controller: T
 
     init(_ controller: T) {

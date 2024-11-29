@@ -11,7 +11,7 @@ import Foundation
 final class HomePresenter: ViewToPresenterHomeProtocol {
     // MARK: Properties
 
-    private let view: PresenterToViewHomeProtocol
+    private weak var view: PresenterToViewHomeProtocol?
     private let interactor: PresenterToInteractorHomeProtocol
     private let router: PresenterToRouterHomeProtocol
 
@@ -26,6 +26,6 @@ final class HomePresenter: ViewToPresenterHomeProtocol {
 
 extension HomePresenter: InteractorToPresenterHomeProtocol {
     func showSuccessMessage() {
-        view.showMessage(message: "okay basarili")
+        view?.showMessage(message: "okay basarili")
     }
 }

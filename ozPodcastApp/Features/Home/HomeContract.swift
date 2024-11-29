@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 
-protocol PresenterToViewHomeProtocol {
+protocol PresenterToViewHomeProtocol: AnyObject {
     func showMessage(message: String)
 }
 
