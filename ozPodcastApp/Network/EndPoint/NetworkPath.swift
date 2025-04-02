@@ -8,7 +8,10 @@
 import Foundation
 
 enum NetworkPath: String, NetworkPathProtocol {
-    case login = "/login"
+    case podcast = "podcast"
+    case search = "search"
+
+    static let baseUrl: String = "https://musicappgobackend-production.up.railway.app"
 
     var value: String {
         self.rawValue

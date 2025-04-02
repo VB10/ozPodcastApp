@@ -27,14 +27,13 @@ final class NetworkManager: NetworkManagerProtocol {
     ///   - paramater: Query parms. etc.
     /// - Returns: Result with sucses responre or error
     func send<T: Decodable>(
-        path: NetworkPathProtocol,
-        // TODO: NetworkMethod global
+        path: NetworkPath,
         method: NetworkMethod,
         type: T.Type,
         body: Encodable? = nil,
         paramater: Parameters? = nil
     ) async -> Result<T, Error> {
-        let url = config.baseUrl + path.value
+        let url = "\(config.baseUrl)/\(path.rawValue)"
         let reqeust: DataRequest
 
         // TODO: Seperate client object

@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController, NavigationView {
     
     lazy var homeView: HomeView = {
         let view = HomeView(self)
+        view.backgroundColor = .primary
         return view
     }()
     
@@ -28,6 +29,5 @@ final class HomeViewController: UIViewController, NavigationView {
     
     private func setupView() {
         view = homeView
-        view.backgroundColor = .primary
     }
 }

@@ -12,8 +12,6 @@ protocol OnGoingPodcastViewDelegate: AnyObject {
 }
 
 final class OnGoingPodcastView: UIView {
-    
-    
     var delegate: OnGoingPodcastViewDelegate?
     init(frame: CGRect, showProgressView: Bool, podcast: PodcastResponse? = nil) {
         super.init(frame: frame)
@@ -34,7 +32,7 @@ final class OnGoingPodcastView: UIView {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.defaultTheme.themeFont.subtitleFontBoldSize
+        label.font = ThemeManager.deafultTheme.fontTheme.subTitleBoldFont
         return label
     }()
 
@@ -52,21 +50,19 @@ final class OnGoingPodcastView: UIView {
         button.addAction(secureAction, for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var secureAction: UIAction = UIAction { _ in
         self.delegate?.onGoingPodcastViewDidTap()
     }
 
-
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.defaultTheme.themeFont.contentFontSize
+        label.font = ThemeManager.deafultTheme.fontTheme.titleFont
         label.textColor = .gray
         return label
     }()
 
     func updateUI(with currentMusic: CurrentMusic) {
-        
         guard let podcast = currentMusic.music else { return }
         guard let imageUrl = URL(string: podcast.thumbnail ?? "") else { return }
         titleLabel.text = podcast.title
@@ -123,15 +119,12 @@ final class OnGoingPodcastView: UIView {
             make.centerY.equalToSuperview()
             make.width.height.equalTo(30)
         }
-
-       
     }
 }
 
 #Preview {
     OnGoingPodcastView(frame: .zero, showProgressView: false, podcast: PodcastResponse.mock)
 }
-
 
 struct User {
     var name: String

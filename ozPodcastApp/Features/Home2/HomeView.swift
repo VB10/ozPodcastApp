@@ -16,14 +16,8 @@ protocol HomeViewInput: AnyObject {
 }
 
 final class HomeView: BaseView<HomeViewController>, HomeViewInput {
-    func updatePodcastsCollectionView(items: [PodcastResponse]) {
-        self.items = items
-        runOnMainSafety {
-            self.collectionPodcastView.reloadData()
-        }
-    }
-    
     // MARK: - Properties
+
     private enum Layout {
         static let iconSize: CGFloat = 20
         static let defaultPadding: CGFloat = 20
@@ -31,7 +25,7 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         static let ongoingViewHeight: CGFloat = 70
         static let collectionItemsPerRow: CGFloat = 3
     }
-    
+
     private var items: [PodcastResponse] = []
     private var isLoading: Bool = false
     private var cancellables = Set<AnyCancellable>()
@@ -39,22 +33,26 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
     private weak var presenter: HomePresenterProtocol?
 
     // MARK: - UI Components
+
     private lazy var loadingLottie: LottieAnimationView = createLoadingLottie()
-    private lazy var searchButton: UIButton = createSearchButton()
+
+    private lazy var searchButton: UIButton = createSearchButton(
+    )
     private lazy var onGoingView: OnGoingPodcastView = {
         let view = OnGoingPodcastView(frame: .zero, showProgressView: true)
         view.delegate = self
         return view
     }()
+
     private lazy var continueLabel: UILabel = createLabel(
         text: Constants.continueListening,
-        font: ThemeManager.defaultTheme.themeFont.sectionHeaderFontSize,
-        color: ThemeManager.defaultTheme.themeColor.primaryColor
+        font: ThemeManager.deafultTheme.fontTheme.titleFont,
+        color: ThemeManager.deafultTheme.colorTheme.primaryColor
     )
     private lazy var newPodcastsLabel: UILabel = createLabel(
         text: Constants.newPodcasts,
-        font: ThemeManager.defaultTheme.themeFont.sectionHeaderFontSize,
-        color: .black
+        font: ThemeManager.deafultTheme.fontTheme.subTitleFont,
+        color: ThemeManager.deafultTheme.colorTheme.primaryColor
     )
     private lazy var collectionPodcastView: UICollectionView = createCollectionView()
 
@@ -63,26 +61,22 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         setupSubviews()
         setupConstraints()
         setupBindings()
-        setTitle(Constants.homeTitleText)
     }
-    
+
     private func setupSubviews() {
-        [searchButton, continueLabel, newPodcastsLabel, 
+        [searchButton, continueLabel, newPodcastsLabel,
          collectionPodcastView, loadingLottie, onGoingView].forEach(addSubview)
     }
-    
+
     private func setupBindings() {
-        /// remove production
-        try? AppContainers.register()
-        
-        AppContainers.dataPublisher.dataUpdated
+        AppContainer.shared.dataPublisher.dataUpdated
             .receive(on: DispatchQueue.main)
             .sink { [weak self] current in
                 self?.handleCurrentMusicUpdate(current)
             }
             .store(in: &cancellables)
     }
-    
+
     private func handleCurrentMusicUpdate(_ current: CurrentMusic?) {
         showOrHiddenContuniueMusic(music: current)
         onGoingPodcast = current?.music
@@ -107,9 +101,17 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
             }
         }
     }
+
+    func updatePodcastsCollectionView(items: [PodcastResponse]) {
+        self.items = items
+        runOnMainSafety {
+            self.collectionPodcastView.reloadData()
+        }
+    }
 }
 
 // MARK: - UI Creation Methods
+
 private extension HomeView {
     func createLoadingLottie() -> LottieAnimationView {
         let animationView = LottieAnimationView(asset: Constants.homeLottie)
@@ -117,7 +119,7 @@ private extension HomeView {
         animationView.contentMode = .scaleAspectFill
         return animationView
     }
-    
+
     func createSearchButton() -> UIButton {
         var config = UIButton.Configuration.bordered()
         config.image = SystemIcons.search.image
@@ -126,14 +128,14 @@ private extension HomeView {
         config.imagePlacement = .leading
         config.titleAlignment = .leading
         config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-        
+
         let button = UIButton(configuration: config)
         button.contentHorizontalAlignment = .left
         button.tintColor = .primary
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }
-    
+
     func createLabel(text: String, font: UIFont, color: UIColor) -> UILabel {
         let label = UILabel()
         label.text = text
@@ -141,16 +143,16 @@ private extension HomeView {
         label.textColor = color
         return label
     }
-    
+
     func createCollectionView() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
+
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(NewPodcasCollectionCell.self, 
-                              forCellWithReuseIdentifier: NewPodcasCollectionCell.reuseIdentifier)
+        collectionView.register(NewPodcasCollectionCell.self,
+                                forCellWithReuseIdentifier: NewPodcasCollectionCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         return collectionView
@@ -171,18 +173,19 @@ extension HomeView: UICollectionViewDataSource {
 
 extension HomeView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
-                       layout collectionViewLayout: UICollectionViewLayout,
-                       sizeForItemAt indexPath: IndexPath) -> CGSize {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
         let layout = collectionViewLayout as? UICollectionViewFlowLayout
         let sectionInsets = layout?.sectionInset ?? .zero
         let spacing = layout?.minimumInteritemSpacing ?? 0
-        
-        let totalSpacing = sectionInsets.left + sectionInsets.right + 
-                          (spacing * (Layout.collectionItemsPerRow - 1))
+
+        let totalSpacing = sectionInsets.left + sectionInsets.right +
+            (spacing * (Layout.collectionItemsPerRow - 1))
         let availableWidth = collectionView.bounds.width - totalSpacing
         let widthPerItem = availableWidth / Layout.collectionItemsPerRow
         let heightPerItem = widthPerItem * 2
-        
+
         return CGSize(width: widthPerItem, height: heightPerItem)
     }
 }

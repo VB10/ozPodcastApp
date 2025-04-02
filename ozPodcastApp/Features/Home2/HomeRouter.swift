@@ -38,10 +38,10 @@ final class HomeRouter: HomeRouterInput {
     }
 
     func navigateToPodcast(podcastResponse: PodcastResponse) {
-        viewController.present(HomeDetailRouter.createModule(podcast: podcastResponse))
+//        viewController.present(HomeDetailRouter.createModule(podcast: podcastResponse))
     }
 
     func navigateToSearch() {
-        viewController.pushWithNavigationController(SearchRouter.createModule())
+//        viewController.pushWithNavigationController(SearchRouter.createModule())
     }
 }

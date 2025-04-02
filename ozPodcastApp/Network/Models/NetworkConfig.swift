@@ -8,5 +8,5 @@
 import Foundation
 
 struct NetworkConfig {
-    let baseUrl: String
+    let baseUrl: String = "https://musicappgobackend-production.up.railway.app"
 }

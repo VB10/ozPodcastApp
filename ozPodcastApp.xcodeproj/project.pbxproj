@@ -25,6 +25,16 @@
 		54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */; };
 		54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */; };
 		54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */; };
+		54C964A42D83B90E00518D65 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 54C964A32D83B90E00518D65 /* Lottie */; };
+		54C964A72D83B95300518D65 /* PodcastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964A62D83B94E00518D65 /* PodcastResponse.swift */; };
+		54C964AA2D83B9B700518D65 /* MainThread+Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964A92D83B9B600518D65 /* MainThread+Weakify.swift */; };
+		54C964AD2D83BC5B00518D65 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964AC2D83BC5400518D65 /* BaseInteractor.swift */; };
+		54C964B02D83BC8100518D65 /* GeneralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964AF2D83BC7E00518D65 /* GeneralService.swift */; };
+		54C964B22D83BE0F00518D65 /* SystemIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964B12D83BE0C00518D65 /* SystemIcons.swift */; };
+		54C964B42D83BE4700518D65 /* CurrentMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964B32D83BE4500518D65 /* CurrentMusic.swift */; };
+		54C964B62D83BEDA00518D65 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964B52D83BECF00518D65 /* Double+Time.swift */; };
+		54C964B82D83C46900518D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964B72D83C46700518D65 /* Constants.swift */; };
+		54C964BA2D83C51600518D65 /* CollectionView+Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C964B92D83C50700518D65 /* CollectionView+Deque.swift */; };
 		54D8B0702C6D792500749F67 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8B06F2C6D792500749F67 /* BaseView.swift */; };
 		54D8B0732C6D7A9A00749F67 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54D8B0722C6D7A9A00749F67 /* RealmSwift */; };
 		54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DDEBB12C8A73C200345146 /* LocalDatabse.swift */; };
@@ -49,14 +59,15 @@
 		54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D822C756B0A00AD17FC /* ThemeManager.swift */; };
 		54E09D852C756BF300AD17FC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 54E09D842C756BF300AD17FC /* Localizable.xcstrings */; };
 		54E09D872C756CB300AD17FC /* LocaleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D862C756CB300AD17FC /* LocaleKeys.swift */; };
-		54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D7E2C6C28780049AEC6 /* HomeContract.swift */; };
-		54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D7F2C6C28780049AEC6 /* HomePresenter.swift */; };
-		54EB8D862C6C28780049AEC6 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D802C6C28780049AEC6 /* HomeRouter.swift */; };
-		54EB8D872C6C28780049AEC6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D812C6C28780049AEC6 /* HomeViewController.swift */; };
-		54EB8D882C6C28780049AEC6 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D822C6C28780049AEC6 /* HomeInteractor.swift */; };
-		54EB8D892C6C28780049AEC6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D832C6C28780049AEC6 /* HomeView.swift */; };
 		54EB8D8E2C6C28CD0049AEC6 /* NavigationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D8D2C6C28CD0049AEC6 /* NavigationViewProtocol.swift */; };
 		54EB8D912C6C29430049AEC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54EB8D902C6C29430049AEC6 /* SnapKit */; };
+		54F5B8352D83AADA00134EA6 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B8322D83AADA00134EA6 /* HomeRouter.swift */; };
+		54F5B8362D83AADA00134EA6 /* OnGoingPodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B82E2D83AADA00134EA6 /* OnGoingPodcastView.swift */; };
+		54F5B8372D83AADA00134EA6 /* NewPodcasCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B82D2D83AADA00134EA6 /* NewPodcasCollectionCell.swift */; };
+		54F5B8382D83AADA00134EA6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B8312D83AADA00134EA6 /* HomePresenter.swift */; };
+		54F5B8392D83AADA00134EA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B82C2D83AADA00134EA6 /* HomeView.swift */; };
+		54F5B83A2D83AADA00134EA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B8332D83AADA00134EA6 /* HomeViewController.swift */; };
+		54F5B83B2D83AADA00134EA6 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B8302D83AADA00134EA6 /* HomeInteractor.swift */; };
 		54FC8A5E2C62D8E20025A13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC8A5D2C62D8E20025A13B /* AppDelegate.swift */; };
 		54FC8A602C62D8E20025A13B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC8A5F2C62D8E20025A13B /* SceneDelegate.swift */; };
 		54FC8A672C62D8E30025A13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FC8A662C62D8E30025A13B /* Assets.xcassets */; };
@@ -122,6 +133,15 @@
 		54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDemoTests.swift; sourceTree = "<group>"; };
 		54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPubliser.swift; sourceTree = "<group>"; };
+		54C964A62D83B94E00518D65 /* PodcastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastResponse.swift; sourceTree = "<group>"; };
+		54C964A92D83B9B600518D65 /* MainThread+Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainThread+Weakify.swift"; sourceTree = "<group>"; };
+		54C964AC2D83BC5400518D65 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		54C964AF2D83BC7E00518D65 /* GeneralService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralService.swift; sourceTree = "<group>"; };
+		54C964B12D83BE0C00518D65 /* SystemIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemIcons.swift; sourceTree = "<group>"; };
+		54C964B32D83BE4500518D65 /* CurrentMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMusic.swift; sourceTree = "<group>"; };
+		54C964B52D83BECF00518D65 /* Double+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
+		54C964B72D83C46700518D65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		54C964B92D83C50700518D65 /* CollectionView+Deque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Deque.swift"; sourceTree = "<group>"; };
 		54D8B06F2C6D792500749F67 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		54DDEBB12C8A73C200345146 /* LocalDatabse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabse.swift; sourceTree = "<group>"; };
 		54DDEBB32C8A751900345146 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
@@ -143,13 +163,14 @@
 		54E09D822C756B0A00AD17FC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		54E09D842C756BF300AD17FC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		54E09D862C756CB300AD17FC /* LocaleKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleKeys.swift; sourceTree = "<group>"; };
-		54EB8D7E2C6C28780049AEC6 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
-		54EB8D7F2C6C28780049AEC6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		54EB8D802C6C28780049AEC6 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		54EB8D812C6C28780049AEC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		54EB8D822C6C28780049AEC6 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		54EB8D832C6C28780049AEC6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		54EB8D8D2C6C28CD0049AEC6 /* NavigationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewProtocol.swift; sourceTree = "<group>"; };
+		54F5B82C2D83AADA00134EA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		54F5B82D2D83AADA00134EA6 /* NewPodcasCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodcasCollectionCell.swift; sourceTree = "<group>"; };
+		54F5B82E2D83AADA00134EA6 /* OnGoingPodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingPodcastView.swift; sourceTree = "<group>"; };
+		54F5B8302D83AADA00134EA6 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		54F5B8312D83AADA00134EA6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		54F5B8322D83AADA00134EA6 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		54F5B8332D83AADA00134EA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		54FC8A5A2C62D8E20025A13B /* ozPodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ozPodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FC8A5D2C62D8E20025A13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54FC8A5F2C62D8E20025A13B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +199,7 @@
 				54EB8D912C6C29430049AEC6 /* SnapKit in Frameworks */,
 				54FC8AB22C62E8030025A13B /* Toast in Frameworks */,
 				54FC8AA22C62E6DD0025A13B /* Swinject in Frameworks */,
+				54C964A42D83B90E00518D65 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +286,33 @@
 			path = SubFeatures;
 			sourceTree = "<group>";
 		};
+		54C964A52D83B94400518D65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54C964B32D83BE4500518D65 /* CurrentMusic.swift */,
+				54C964A62D83B94E00518D65 /* PodcastResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54C964A82D83B9AF00518D65 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				54C964B92D83C50700518D65 /* CollectionView+Deque.swift */,
+				54C964B52D83BECF00518D65 /* Double+Time.swift */,
+				54C964A92D83B9B600518D65 /* MainThread+Weakify.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		54C964AB2D83BC4D00518D65 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				54C964AC2D83BC5400518D65 /* BaseInteractor.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		54D8B0712C6D7A9A00749F67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +387,9 @@
 		54EB8D6B2C6C26EE0049AEC6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				54C964AB2D83BC4D00518D65 /* Base */,
+				54C964A82D83B9AF00518D65 /* Extension */,
+				54C964A52D83B94400518D65 /* Models */,
 				54EB8D6E2C6C27130049AEC6 /* Services */,
 				54EB8D6D2C6C270E0049AEC6 /* Helpers */,
 				54EB8D6C2C6C27010049AEC6 /* UIComponents */,
@@ -355,6 +407,8 @@
 		54EB8D6D2C6C270E0049AEC6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				54C964B72D83C46700518D65 /* Constants.swift */,
+				54C964B12D83BE0C00518D65 /* SystemIcons.swift */,
 				5412C26E2CF9A592009971C9 /* Radius */,
 				5412C26B2CF9A45B009971C9 /* Padding */,
 				54E09D642C75655C00AD17FC /* Theme */,
@@ -365,6 +419,7 @@
 		54EB8D6E2C6C27130049AEC6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				54C964AF2D83BC7E00518D65 /* GeneralService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -372,9 +427,9 @@
 		54EB8D6F2C6C27320049AEC6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				5412C25E2CF941CD009971C9 /* OnBoard */,
 				54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */,
-				54EB8D7D2C6C28690049AEC6 /* Home */,
+				5412C25E2CF941CD009971C9 /* OnBoard */,
+				54F5B8342D83AADA00134EA6 /* Home2 */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -478,24 +533,33 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		54EB8D7D2C6C28690049AEC6 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				54EB8D7E2C6C28780049AEC6 /* HomeContract.swift */,
-				54EB8D7F2C6C28780049AEC6 /* HomePresenter.swift */,
-				54EB8D802C6C28780049AEC6 /* HomeRouter.swift */,
-				54EB8D812C6C28780049AEC6 /* HomeViewController.swift */,
-				54EB8D822C6C28780049AEC6 /* HomeInteractor.swift */,
-				54EB8D832C6C28780049AEC6 /* HomeView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		54EB8D8A2C6C28A00049AEC6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		54F5B82F2D83AADA00134EA6 /* Vİew */ = {
+			isa = PBXGroup;
+			children = (
+				54F5B82D2D83AADA00134EA6 /* NewPodcasCollectionCell.swift */,
+				54F5B82E2D83AADA00134EA6 /* OnGoingPodcastView.swift */,
+			);
+			path = "Vİew";
+			sourceTree = "<group>";
+		};
+		54F5B8342D83AADA00134EA6 /* Home2 */ = {
+			isa = PBXGroup;
+			children = (
+				54F5B82C2D83AADA00134EA6 /* HomeView.swift */,
+				54F5B82F2D83AADA00134EA6 /* Vİew */,
+				54F5B8302D83AADA00134EA6 /* HomeInteractor.swift */,
+				54F5B8312D83AADA00134EA6 /* HomePresenter.swift */,
+				54F5B8322D83AADA00134EA6 /* HomeRouter.swift */,
+				54F5B8332D83AADA00134EA6 /* HomeViewController.swift */,
+			);
+			path = Home2;
 			sourceTree = "<group>";
 		};
 		54FC8A512C62D8E20025A13B = {
@@ -580,6 +644,7 @@
 				54FC8AB52C62E8BD0025A13B /* BottomSheet */,
 				54EB8D902C6C29430049AEC6 /* SnapKit */,
 				54D8B0722C6D7A9A00749F67 /* RealmSwift */,
+				54C964A32D83B90E00518D65 /* Lottie */,
 			);
 			productName = ozPodcastApp;
 			productReference = 54FC8A5A2C62D8E20025A13B /* ozPodcastApp.app */;
@@ -623,6 +688,7 @@
 				54FC8AB02C62E8030025A13B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				54FC8AB42C62E8BD0025A13B /* XCRemoteSwiftPackageReference "BottomSheet" */,
 				54EB8D8F2C6C29420049AEC6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				54F5B83C2D83AC3C00134EA6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 54FC8A5B2C62D8E20025A13B /* Products */;
 			projectDirPath = "";
@@ -734,23 +800,33 @@
 				5412C2692CF941DE009971C9 /* OnBoardContract.swift in Sources */,
 				5412C26A2CF941DE009971C9 /* OnBoardRouter.swift in Sources */,
 				54E09D6F2C75671300AD17FC /* ButtonTheme.swift in Sources */,
+				54C964AD2D83BC5B00518D65 /* BaseInteractor.swift in Sources */,
+				54C964B22D83BE0F00518D65 /* SystemIcons.swift in Sources */,
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
-				54EB8D842C6C28780049AEC6 /* HomeContract.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
+				54C964AA2D83B9B700518D65 /* MainThread+Weakify.swift in Sources */,
 				54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */,
+				54C964B82D83C46900518D65 /* Constants.swift in Sources */,
 				54DDEBB22C8A73C200345146 /* LocalDatabse.swift in Sources */,
 				54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */,
-				54EB8D852C6C28780049AEC6 /* HomePresenter.swift in Sources */,
+				54F5B8352D83AADA00134EA6 /* HomeRouter.swift in Sources */,
+				54F5B8362D83AADA00134EA6 /* OnGoingPodcastView.swift in Sources */,
+				54C964B42D83BE4700518D65 /* CurrentMusic.swift in Sources */,
+				54C964A72D83B95300518D65 /* PodcastResponse.swift in Sources */,
+				54F5B8372D83AADA00134EA6 /* NewPodcasCollectionCell.swift in Sources */,
+				54F5B8382D83AADA00134EA6 /* HomePresenter.swift in Sources */,
+				54F5B8392D83AADA00134EA6 /* HomeView.swift in Sources */,
+				54C964B62D83BEDA00518D65 /* Double+Time.swift in Sources */,
+				54F5B83A2D83AADA00134EA6 /* HomeViewController.swift in Sources */,
+				54F5B83B2D83AADA00134EA6 /* HomeInteractor.swift in Sources */,
+				54C964BA2D83C51600518D65 /* CollectionView+Deque.swift in Sources */,
 				54A255D92C840B2C001738CC /* NetworkPath.swift in Sources */,
-				54EB8D862C6C28780049AEC6 /* HomeRouter.swift in Sources */,
-				54EB8D872C6C28780049AEC6 /* HomeViewController.swift in Sources */,
 				54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */,
 				54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */,
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,
 				54E09D6D2C7566CD00AD17FC /* TextFieldTheme.swift in Sources */,
-				54EB8D882C6C28780049AEC6 /* HomeInteractor.swift in Sources */,
 				54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */,
-				54EB8D892C6C28780049AEC6 /* HomeView.swift in Sources */,
+				54C964B02D83BC8100518D65 /* GeneralService.swift in Sources */,
 				5412C2702CF9A5A1009971C9 /* ProductRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1025,6 +1101,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		54F5B83C2D83AC3C00134EA6 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 		54FC8A9B2C62E6700025A13B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1084,6 +1168,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		54C964A32D83B90E00518D65 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F5B83C2D83AC3C00134EA6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		54D8B0722C6D7A9A00749F67 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54FC8AAB2C62E7C40025A13B /* XCRemoteSwiftPackageReference "realm-swift" */;

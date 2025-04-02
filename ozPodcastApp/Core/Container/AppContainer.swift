@@ -19,6 +19,11 @@ final class AppContainer {
         logger = OSLog(subsystem: "com.vb.ozPodcastApp", category: "AppContainer")
         registerDependencies()
     }
+    
+    /// Print message to console pretty
+    func logErrorMessageToConsole(_ message: String) {
+        os_log(.error, log: logger, "Error: \(message)")
+    }
         
     /// Network manager object
     var network: NetworkManager {
@@ -39,8 +44,8 @@ final class AppContainer {
     }
     
     /// DataPublisher
-    var dataPublisher: DataPubliser {
-        guard let instance = container.resolve(DataPubliser.self) else {
+    var dataPublisher: DataPublisher {
+        guard let instance = container.resolve(DataPublisher.self) else {
             os_log(.error, log: logger, "DataPubliser not found")
             fatalError("DataPubliser not found")
         }
@@ -50,9 +55,9 @@ final class AppContainer {
     /// Register for global object with this method
     private func registerDependencies() {
         os_log(.info, log: logger, "Registering dependencies vb10")
-        container.register(NetworkManager.self) { _ in NetworkManager(config: NetworkConfig(baseUrl: "https://api.github.com")) }
+        container.register(NetworkManager.self) { _ in NetworkManager(config: NetworkConfig()) }
         
         container.register(RealmDatabase.self) { _ in RealmDatabase() }
-        container.register(DataPubliser.self) { _ in DataPubliser() }
+        container.register(DataPublisher.self) { _ in DataPublisher() }
     }
 }

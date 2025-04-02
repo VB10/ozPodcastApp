@@ -33,6 +33,6 @@ final class OnBoardRouter: PresenterToRouterOnBoardProtocol {
     }
 
     func navigateToMainScreen() {
-        navigation.present(HomeRouter.createModule())
+//        navigation.present(HomeRouter.createModule())
     }
 }

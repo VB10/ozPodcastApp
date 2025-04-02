@@ -12,7 +12,7 @@ import UIKit
 final class NewPodcasCollectionCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: NewPodcasCollectionCell.self)
 
-    private let appTheme: AppTheme = ThemeManager.defaultTheme
+    private let appTheme: AppTheme = ThemeManager.deafultTheme
 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 300, height: 500) // Set your desired height here
@@ -58,7 +58,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = appTheme.themeFont.actionButtonFontSize
+        label.font = appTheme.fontTheme.titleFont
         label.textColor = .black
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -67,7 +67,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = appTheme.themeFont.tabBarFontSize
+        label.font = appTheme.fontTheme.titleFont
         label.textColor = .gray
         label.numberOfLines = 0
         return label

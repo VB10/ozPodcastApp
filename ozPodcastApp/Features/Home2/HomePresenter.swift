@@ -27,11 +27,12 @@ final class HomePresenter: HomePresenterProtocol {
     }
     
     func viewDidLoad() {
+        guard let view = view else { return }
         Task { @MainActor in
-            view?.showLoading(true)
+            view.showLoading(true)
             let podcasts = await interactor.getPodcasts()
-            view?.updatePodcastsCollectionView(items: podcasts)
-            view?.showLoading(false)
+            view.updatePodcastsCollectionView(items: podcasts)
+            view.showLoading(false)
         }
     }
     
