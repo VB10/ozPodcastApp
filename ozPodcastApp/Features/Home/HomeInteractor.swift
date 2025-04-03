@@ -26,7 +26,7 @@ final class HomeInteractor: BaseInteractor, HomeInteractorProtocol {
     
     func getPodcasts() async -> [PodcastResponse] {
         // Remove mock data in production
-//         return [PodcastResponse.mock]
+         return [PodcastResponse.mock]
         let response = await generalService.podcast()
         return response ?? []
     }

@@ -21,6 +21,11 @@ enum LocaleKeys: String, Localizable {
         case description = "onboard_subTitle"
         case buttonListen = "button_listen"
     }
+    
+    enum Home: String, Localizable {
+        case title = "home_title"
+        case newPodcasts = "home_new_podcast"
+    }
 }
 
 extension Localizable {

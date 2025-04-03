@@ -9,6 +9,34 @@
             "state" : "translated",
             "value" : "Start listening"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinlemeye başla"
+          }
+        }
+      }
+    },
+    "home_new_podcast" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Podcasts you follow"
+          }
+        }
+      }
+    },
+    "home_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#birGaripVBHikayesi"
+          }
         }
       }
     },

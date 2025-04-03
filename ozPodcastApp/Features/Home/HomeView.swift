@@ -53,9 +53,10 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
     )
     private lazy var newPodcastsLabel: UILabel = createLabel(
         text: Constants.newPodcasts,
-        font: ThemeManager.deafultTheme.fontTheme.subTitleFont,
+        font: ThemeManager.deafultTheme.fontTheme.subTitleBoldFont,
         color: ThemeManager.deafultTheme.colorTheme.primaryColor
     )
+    
     private lazy var collectionPodcastView: UICollectionView = createCollectionView()
 
     override func setupView() {
@@ -65,6 +66,8 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         setupBindings()
         collectionViewHelper = HomeCollectionViewHelper(collectionView: collectionPodcastView)
         collectionViewHelper?.delegate = self
+        
+        setTitle(LocaleKeys.Home.title.localized())
     }
 
     private func setupSubviews() {

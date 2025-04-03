@@ -51,7 +51,7 @@ class BaseView<T: UIViewController>: UIView, MainThreadRunnerType {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = appTheme.textFieldTheme.font
+        label.font = appTheme.fontTheme.titleBoldFont
         return label
     }()
 

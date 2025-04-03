@@ -12,8 +12,7 @@ protocol HomeCollectionViewHelperDelegate: AnyObject {
 }
 
 // Make helper conform to UICollectionViewDelegate as well
-final class HomeCollectionViewHelper: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+final class HomeCollectionViewHelper: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MainThreadRunnerType {
     private var items: [PodcastResponse] = []
     private weak var collectionView: UICollectionView?
     // Add delegate property
@@ -32,7 +31,7 @@ final class HomeCollectionViewHelper: NSObject, UICollectionViewDataSource, UICo
 
     // Method to update the data and reload the collection view
     func updateItems(_ newItems: [PodcastResponse]) {
-        self.items = newItems
+        items = newItems
         runOnMainSafety { [weak self] in
             self?.collectionView?.reloadData()
         }
@@ -78,13 +77,3 @@ final class HomeCollectionViewHelper: NSObject, UICollectionViewDataSource, UICo
         delegate?.didSelectItem(item: selectedItem)
     }
 }
-
-// Helper function (assuming it's defined elsewhere or we define it globally/extension)
-// If not already global, add this or ensure it's accessible
-func runOnMainSafety(_ block: @escaping () -> Void) {
-    if Thread.isMainThread {
-        block()
-    } else {
-        DispatchQueue.main.async(execute: block)
-    }
-} 

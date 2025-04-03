@@ -58,7 +58,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = appTheme.fontTheme.titleFont
+        label.font = appTheme.fontTheme.subTitleBoldFont
         label.textColor = .black
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -67,7 +67,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = appTheme.fontTheme.titleFont
+        label.font = appTheme.fontTheme.conentFont
         label.textColor = .gray
         label.numberOfLines = 0
         return label
