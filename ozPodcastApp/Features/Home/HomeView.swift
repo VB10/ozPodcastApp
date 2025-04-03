@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import Lottie
+import SnapKit
 import UIKit
 
 protocol HomeViewInput: AnyObject {
@@ -23,14 +24,15 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         static let defaultPadding: CGFloat = 20
         static let buttonHeight: CGFloat = 40
         static let ongoingViewHeight: CGFloat = 70
-        static let collectionItemsPerRow: CGFloat = 3
+        static let smallVerticalSpacing: CGFloat = 10
     }
 
-    private var items: [PodcastResponse] = []
     private var isLoading: Bool = false
     private var cancellables = Set<AnyCancellable>()
     private var onGoingPodcast: PodcastResponse?
     private weak var presenter: HomePresenterProtocol?
+    private var onGoingViewHeightConstraint: Constraint?
+    private var collectionViewHelper: HomeCollectionViewHelper?
 
     // MARK: - UI Components
 
@@ -61,6 +63,8 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         setupSubviews()
         setupConstraints()
         setupBindings()
+        collectionViewHelper = HomeCollectionViewHelper(collectionView: collectionPodcastView)
+        collectionViewHelper?.delegate = self
     }
 
     private func setupSubviews() {
@@ -78,7 +82,7 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
     }
 
     private func handleCurrentMusicUpdate(_ current: CurrentMusic?) {
-        showOrHiddenContuniueMusic(music: current)
+        showOrHideContinueMusic(music: current)
         onGoingPodcast = current?.music
         if let music = current {
             onGoingView.updateUI(with: music)
@@ -91,22 +95,18 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
 
     func showLoading(_ isLoading: Bool) {
         runOnMainSafety { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
+            loadingLottie.isHidden = !isLoading
             if isLoading {
                 loadingLottie.play()
-                loadingLottie.isHidden = false
             } else {
                 loadingLottie.stop()
-                loadingLottie.isHidden = true
             }
         }
     }
 
     func updatePodcastsCollectionView(items: [PodcastResponse]) {
-        self.items = items
-        runOnMainSafety {
-            self.collectionPodcastView.reloadData()
-        }
+        collectionViewHelper?.updateItems(items)
     }
 }
 
@@ -151,105 +151,76 @@ private extension HomeView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(NewPodcasCollectionCell.self,
-                                forCellWithReuseIdentifier: NewPodcasCollectionCell.reuseIdentifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         return collectionView
     }
 }
 
-extension HomeView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: NewPodcasCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: NewPodcasCollectionCell.reuseIdentifier, for: indexPath)
-        cell.configure(with: items[indexPath.row])
-        return cell
-    }
-}
-
-extension HomeView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        let layout = collectionViewLayout as? UICollectionViewFlowLayout
-        let sectionInsets = layout?.sectionInset ?? .zero
-        let spacing = layout?.minimumInteritemSpacing ?? 0
-
-        let totalSpacing = sectionInsets.left + sectionInsets.right +
-            (spacing * (Layout.collectionItemsPerRow - 1))
-        let availableWidth = collectionView.bounds.width - totalSpacing
-        let widthPerItem = availableWidth / Layout.collectionItemsPerRow
-        let heightPerItem = widthPerItem * 2
-
-        return CGSize(width: widthPerItem, height: heightPerItem)
-    }
-}
-
-extension HomeView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.didSelectPodcast(items[indexPath.row])
+extension HomeView: HomeCollectionViewHelperDelegate {
+    func didSelectItem(item: PodcastResponse) {
+        presenter?.didSelectPodcast(item)
     }
 }
 
 extension HomeView {
-    func showOrHiddenContuniueMusic(music: CurrentMusic?) {
-        runOnMain {
+    func showOrHideContinueMusic(music: CurrentMusic?) {
+        runOnMain { [weak self] in
+            guard let self else { return }
             let isHidden = music == nil
             self.onGoingView.isHidden = isHidden
             self.continueLabel.isHidden = isHidden
 
-            self.continueLabel.snp.remakeConstraints { make in
-                make.leading.trailing.equalTo(20)
-                make.top.equalTo(self.searchButton.snp.bottom).offset(isHidden ? 10 : 10)
-            }
-
-            self.onGoingView.snp.remakeConstraints { make in
-                make.top.equalTo(self.continueLabel.snp.bottom).offset(isHidden ? 10 : 10)
-                make.leading.trailing.equalToSuperview().inset(20)
-                make.height.equalTo(isHidden ? 0 : 70)
-            }
+            self.onGoingViewHeightConstraint?.update(offset: isHidden ? 0 : Layout.ongoingViewHeight)
         }
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
+        setupSearchButtonConstraints()
+        setupContinueListeningConstraints()
+        setupPodcastListConstraints()
+    }
+
+    // MARK: - Constraint Setup Helpers
+
+    private func setupSearchButtonConstraints() {
         searchButton.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.height.equalTo(40)
+            make.top.equalTo(headerView.snp.bottom).offset(Layout.defaultPadding)
+            make.left.equalToSuperview().offset(Layout.defaultPadding)
+            make.right.equalToSuperview().offset(-Layout.defaultPadding)
+            make.height.equalTo(Layout.buttonHeight)
         }
+    }
 
+    private func setupContinueListeningConstraints() {
         continueLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().offset(20)
-            make.top.equalTo(searchButton.snp.bottom).offset(10)
-            make.height.equalTo(0)
-        }
-        onGoingView.snp.makeConstraints { make in
-            make.top.equalTo(continueLabel.snp.bottom).offset(0)
-            make.trailing.leading.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(Layout.defaultPadding)
+            make.top.equalTo(searchButton.snp.bottom).offset(Layout.smallVerticalSpacing)
             make.height.equalTo(0)
         }
 
+        onGoingView.snp.makeConstraints { make in
+            make.top.equalTo(continueLabel.snp.bottom).offset(Layout.smallVerticalSpacing)
+            make.trailing.leading.equalToSuperview().inset(Layout.defaultPadding)
+            self.onGoingViewHeightConstraint = make.height.equalTo(0).constraint
+        }
+    }
+
+    private func setupPodcastListConstraints() {
         newPodcastsLabel.snp.makeConstraints { make in
-            make.top.equalTo(onGoingView.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
+            make.top.equalTo(onGoingView.snp.bottom).offset(Layout.smallVerticalSpacing)
+            make.leading.equalToSuperview().offset(Layout.defaultPadding)
+            make.trailing.equalToSuperview().offset(-Layout.defaultPadding)
         }
 
         collectionPodcastView.snp.makeConstraints { make in
-            make.top.equalTo(newPodcastsLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(20)
+            make.top.equalTo(newPodcastsLabel.snp.bottom).offset(Layout.defaultPadding)
+            make.leading.trailing.equalToSuperview().inset(Layout.defaultPadding)
+            make.bottom.equalToSuperview().inset(Layout.defaultPadding)
         }
 
         loadingLottie.snp.makeConstraints { make in
-            make.top.equalTo(newPodcastsLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(20)
+            make.top.equalTo(newPodcastsLabel.snp.bottom).offset(Layout.defaultPadding)
+            make.leading.trailing.equalToSuperview().inset(Layout.defaultPadding)
+            make.bottom.equalToSuperview().inset(Layout.defaultPadding)
         }
     }
 }
