@@ -12,10 +12,23 @@ import UIKit
 final class NewPodcasCollectionCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: NewPodcasCollectionCell.self)
 
+    // MARK: - Constants
+    private enum Constants {
+        static let imageViewCornerRadius: CGFloat = 20.0
+        static let imageViewBorderWidth: CGFloat = 0.5
+        static let playButtonSize: CGFloat = 30.0
+        static let standardPadding: CGFloat = 10.0
+        static let smallPadding: CGFloat = 6.0
+        static let intrinsicHeight: CGFloat = 500.0 // Consider if this is truly necessary or handled by layout
+        static let intrinsicWidth: CGFloat = 300.0 // Consider if this is truly necessary or handled by layout
+    }
+
     private let appTheme: AppTheme = ThemeManager.deafultTheme
 
+    // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 300, height: 500) // Set your desired height here
+        // This might be unnecessary if your collection view layout handles sizing dynamically.
+        return CGSize(width: Constants.intrinsicWidth, height: Constants.intrinsicHeight)
     }
 
     override init(frame: CGRect) {
@@ -36,30 +49,31 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - UI Elements
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner]
-        imageView.layer.borderWidth = 0.5
-        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.borderWidth = Constants.imageViewBorderWidth
+        imageView.layer.borderColor = appTheme.colorTheme.secondaryColor.cgColor // Use theme color
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = Constants.imageViewCornerRadius
         imageView.contentMode = .scaleAspectFill
-        imageView.image = .imagePodcaster
+        imageView.image = .imagePodcaster // Assuming this is a placeholder
         return imageView
     }()
 
     private lazy var playButtonOverlay: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = .playButton
-        imageView.tintColor = .black
+        imageView.image = .playButton // Assuming this is defined elsewhere
+        imageView.tintColor = appTheme.colorTheme.secondaryColor // Use theme color
         return imageView
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = appTheme.fontTheme.subTitleBoldFont
-        label.textColor = .black
+        label.textColor = appTheme.colorTheme.secondaryColor // Use theme color
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -68,11 +82,12 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = appTheme.fontTheme.conentFont
-        label.textColor = .gray
+        label.textColor = appTheme.colorTheme.secondaryColor // Use theme color
         label.numberOfLines = 0
         return label
     }()
 
+    // MARK: - Setup
     private func setupViews() {
         contentView.addSubview(imageView)
         contentView.layer.masksToBounds = true
@@ -83,9 +98,9 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private func setupConstraints() {
         playButtonOverlay.snp.makeConstraints { make in
-            make.bottom.equalTo(imageView.snp.bottom).offset(-10)
-            make.right.equalTo(imageView.snp.right).offset(-10)
-            make.height.width.equalTo(30)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-Constants.standardPadding)
+            make.right.equalTo(imageView.snp.right).offset(-Constants.standardPadding)
+            make.height.width.equalTo(Constants.playButtonSize)
         }
 
         imageView.snp.makeConstraints { make in
@@ -94,16 +109,17 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.left.right.equalToSuperview().inset(10)
+            make.top.equalTo(imageView.snp.bottom).offset(Constants.standardPadding)
+            make.left.right.equalToSuperview().inset(Constants.standardPadding)
         }
 
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.left.right.equalToSuperview().inset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(Constants.smallPadding)
+            make.left.right.equalToSuperview().inset(Constants.standardPadding)
         }
     }
 
+    // MARK: - Configuration
     func configure(with podcast: PodcastResponse) {
         guard let imageUrl = URL(string: podcast.thumbnail ?? "") else { return }
         imageView.kf.setImage(with: imageUrl)
@@ -113,5 +129,6 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 }
 
 #Preview {
+    // Assuming PodcastResponse.mock provides a valid mock object
     NewPodcasCollectionCell(frame: .zero, podcast: PodcastResponse.mock)
 }
