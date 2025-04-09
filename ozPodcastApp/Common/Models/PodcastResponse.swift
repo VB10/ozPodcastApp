@@ -68,7 +68,7 @@ final class PodcastResponseRealm: Object {
     @Persisted var localPathUrl: String = ""
 
     override static func primaryKey() -> String? {
-        return "podcast"
+        return "id"
     }
 
     static func from(response: PodcastResponse, localPath: String) -> PodcastResponseRealm {

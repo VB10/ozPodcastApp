@@ -19,7 +19,7 @@ final class Constants {
     static let profileName: String = "Veli Bacık"
     static let noResultFound: String = "No search results found."
     static let minThreeCharacter: String = "You must enter at least 3 characters to search."
-    static let liblaryTitle: String = "Library"
+    static let libraryTitle: String = "Library"
     static let searchTitleText: String = "Search"
     static let homeTitleText: String = "#birGaripVBHikayesi"
     static let homeLottie: String = "lottieMusic"

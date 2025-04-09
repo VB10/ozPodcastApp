@@ -48,13 +48,13 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
 
     private lazy var continueLabel: UILabel = createLabel(
         text: Constants.continueListening,
-        font: ThemeManager.deafultTheme.fontTheme.titleFont,
-        color: ThemeManager.deafultTheme.colorTheme.primaryColor
+        font: ThemeManager.defaultTheme.fontTheme.titleFont,
+        color: ThemeManager.defaultTheme.colorTheme.primaryColor
     )
     private lazy var newPodcastsLabel: UILabel = createLabel(
         text: Constants.newPodcasts,
-        font: ThemeManager.deafultTheme.fontTheme.subTitleBoldFont,
-        color: ThemeManager.deafultTheme.colorTheme.primaryColor
+        font: ThemeManager.defaultTheme.fontTheme.subTitleBoldFont,
+        color: ThemeManager.defaultTheme.colorTheme.primaryColor
     )
     
     private lazy var collectionPodcastView: UICollectionView = createCollectionView()

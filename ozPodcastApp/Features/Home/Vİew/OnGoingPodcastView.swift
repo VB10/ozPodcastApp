@@ -32,7 +32,7 @@ final class OnGoingPodcastView: UIView {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.deafultTheme.fontTheme.subTitleBoldFont
+        label.font = ThemeManager.defaultTheme.fontTheme.subTitleBoldFont
         return label
     }()
 
@@ -57,7 +57,7 @@ final class OnGoingPodcastView: UIView {
 
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.deafultTheme.fontTheme.titleFont
+        label.font = ThemeManager.defaultTheme.fontTheme.titleFont
         label.textColor = .gray
         return label
     }()

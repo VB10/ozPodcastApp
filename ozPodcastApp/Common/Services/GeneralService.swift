@@ -39,7 +39,7 @@ class GeneralService: GeneralServiceProtocol {
     }
 
     func search(textSearch: String) async -> [PodcastResponse]? {
-        let result = await networkManager.send(path: .search, method: .GET, type: [PodcastResponse].self, paramater: ["q": textSearch])
+        let result = await networkManager.send(path: .search, method: .GET, type: [PodcastResponse].self, parameter: ["q": textSearch])
 
         switch result {
         case .success(let response):

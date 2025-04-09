@@ -24,14 +24,14 @@ final class NetworkManager: NetworkManagerProtocol {
     ///   - method: HttpMethod
     ///   - type: Generic Decodable Type
     ///   - body: Nullable or Encodable
-    ///   - paramater: Query parms. etc.
+    ///   - parameter: Query parms. etc.
     /// - Returns: Result with sucses responre or error
     func send<T: Decodable>(
         path: NetworkPath,
         method: NetworkMethod,
         type: T.Type,
         body: Encodable? = nil,
-        paramater: Parameters? = nil
+        parameter: Parameters? = nil
     ) async -> Result<T, Error> {
         let url = "\(config.baseUrl)/\(path.rawValue)"
         let reqeust: DataRequest
@@ -48,7 +48,7 @@ final class NetworkManager: NetworkManagerProtocol {
             reqeust = AF.request(
                 url,
                 method: method.alamofireMethod,
-                parameters: paramater
+                parameters: parameter
             )
         }
 

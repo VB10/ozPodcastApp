@@ -23,7 +23,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
         static let intrinsicWidth: CGFloat = 300.0 // Consider if this is truly necessary or handled by layout
     }
 
-    private let appTheme: AppTheme = ThemeManager.deafultTheme
+    private let appTheme: AppTheme = ThemeManager.defaultTheme
 
     // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
@@ -81,7 +81,7 @@ final class NewPodcasCollectionCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = appTheme.fontTheme.conentFont
+        label.font = appTheme.fontTheme.contentFont
         label.textColor = appTheme.colorTheme.secondaryColor // Use theme color
         label.numberOfLines = 0
         return label

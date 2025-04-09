@@ -18,11 +18,11 @@ class BaseView<T: UIViewController>: UIView, MainThreadRunnerType {
     }
     
     var appTheme: AppTheme {
-        ThemeManager.deafultTheme
+        ThemeManager.defaultTheme
     }
     
     static var currentTheme: AppTheme {
-        ThemeManager.deafultTheme
+        ThemeManager.defaultTheme
     }
     
 
