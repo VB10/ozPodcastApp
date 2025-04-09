@@ -8,5 +8,13 @@
 import Foundation
 
 struct NetworkConfig {
-    let baseUrl: String = "https://musicappgobackend-production.up.railway.app"
+    let baseUrl: String
+
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+
+    init() {
+        self.baseUrl = "https://itunes.apple.com/us/rss/toppodcasts/limit=100/json"
+    }
 }

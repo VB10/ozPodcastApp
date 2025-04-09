@@ -15,6 +15,10 @@
 		5412C26A2CF941DE009971C9 /* OnBoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C2622CF941DE009971C9 /* OnBoardRouter.swift */; };
 		5412C26D2CF9A484009971C9 /* ButtonPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C26C2CF9A481009971C9 /* ButtonPadding.swift */; };
 		5412C2702CF9A5A1009971C9 /* ProductRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412C26F2CF9A59B009971C9 /* ProductRadius.swift */; };
+		54193C282D9E715A00FB5E0A /* HomeCollectionViewHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193C232D9E715A00FB5E0A /* HomeCollectionViewHelperTests.swift */; };
+		54193C292D9E715A00FB5E0A /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193C262D9E715A00FB5E0A /* HomeRouterTests.swift */; };
+		54193C2A2D9E715A00FB5E0A /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193C252D9E715A00FB5E0A /* HomePresenterTests.swift */; };
+		54193C2B2D9E715A00FB5E0A /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54193C242D9E715A00FB5E0A /* HomeInteractorTests.swift */; };
 		5434E0DC2D9CF2F900CA04AE /* HomeCollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434E0DB2D9CF2F900CA04AE /* HomeCollectionViewHelper.swift */; };
 		54A255D52C84097A001738CC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D42C84097A001738CC /* NetworkManager.swift */; };
 		54A255D72C840AD8001738CC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255D62C840AD8001738CC /* NetworkConfig.swift */; };
@@ -123,6 +127,10 @@
 		5412C2642CF941DE009971C9 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		5412C26C2CF9A481009971C9 /* ButtonPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPadding.swift; sourceTree = "<group>"; };
 		5412C26F2CF9A59B009971C9 /* ProductRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRadius.swift; sourceTree = "<group>"; };
+		54193C232D9E715A00FB5E0A /* HomeCollectionViewHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewHelperTests.swift; sourceTree = "<group>"; };
+		54193C242D9E715A00FB5E0A /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		54193C252D9E715A00FB5E0A /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		54193C262D9E715A00FB5E0A /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		5434E0DB2D9CF2F900CA04AE /* HomeCollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewHelper.swift; sourceTree = "<group>"; };
 		54A255D42C84097A001738CC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		54A255D62C840AD8001738CC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
@@ -237,6 +245,17 @@
 			path = Radius;
 			sourceTree = "<group>";
 		};
+		54193C272D9E715A00FB5E0A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54193C232D9E715A00FB5E0A /* HomeCollectionViewHelperTests.swift */,
+				54193C242D9E715A00FB5E0A /* HomeInteractorTests.swift */,
+				54193C252D9E715A00FB5E0A /* HomePresenterTests.swift */,
+				54193C262D9E715A00FB5E0A /* HomeRouterTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		54A255D22C840844001738CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +285,7 @@
 		54A255ED2C84101F001738CC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				54193C272D9E715A00FB5E0A /* Home */,
 				54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */,
 				54DDEBB52C8A7B6400345146 /* RealmDatabaseTests.swift */,
 			);
@@ -776,6 +796,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54193C282D9E715A00FB5E0A /* HomeCollectionViewHelperTests.swift in Sources */,
+				54193C292D9E715A00FB5E0A /* HomeRouterTests.swift in Sources */,
+				54193C2A2D9E715A00FB5E0A /* HomePresenterTests.swift in Sources */,
+				54193C2B2D9E715A00FB5E0A /* HomeInteractorTests.swift in Sources */,
 				54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */,
 				54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */,
 				54DDEBB62C8A7B6400345146 /* RealmDatabaseTests.swift in Sources */,

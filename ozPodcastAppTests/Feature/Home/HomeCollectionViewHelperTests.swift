@@ -108,7 +108,12 @@ private final class MockCollectionView: UICollectionView {
     }
     
     override var bounds: CGRect {
-        return mockBounds.isEmpty ? super.bounds : mockBounds
+        get {
+            return mockBounds.isEmpty ? super.bounds : mockBounds
+        }
+        set {
+            super.bounds = newValue
+        }
     }
 }
 
