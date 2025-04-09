@@ -238,6 +238,12 @@ extension HomeView: OnGoingPodcastViewDelegate {
         guard let onGoingPodcast = onGoingPodcast else { return }
         presenter?.didSelectPodcast(onGoingPodcast)
     }
+
+    private func changeColorIndactor() {
+        runOnMain {
+            self.loadingIndicator.color = .red
+        }
+    }
 }
 
 #Preview {
