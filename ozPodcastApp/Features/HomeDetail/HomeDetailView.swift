@@ -37,7 +37,7 @@ final class HomeDetailView: BaseView<HomeDetailViewController> {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.defaultTheme.fontTheme.titleFont
+        label.font = ThemeManager.defaultTheme.fontTheme.subTitleFont
         return label
     }()
 
@@ -187,7 +187,7 @@ extension HomeDetailView {
         addSubview(durationLabel)
         addSubview(downloadIcon)
 
-        setTitle("Now Playing")
+        setTitle(LocaleKeys.HomeDetail.title.localized)
 
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
         rewindButton.setPreferredSymbolConfiguration(largeConfig, forImageIn: .normal)

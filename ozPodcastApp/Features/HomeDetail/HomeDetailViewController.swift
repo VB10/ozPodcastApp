@@ -10,11 +10,11 @@ import Toast
 import UIKit
 
 final class HomeDetailViewController: UIViewController, NavigationView {
-    var presenter: ViewToPresenterHomeDetailProtocol?
+    var presenter: ViewToPresenterHomeDetailProtocol!
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        presenter?.close()
+        presenter.close()
     }
 
     lazy var homeDetailView: HomeDetailView = {

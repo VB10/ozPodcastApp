@@ -8,28 +8,40 @@
 import Combine
 import Foundation
 
-final class DataPublisher {
-    let dataUpdated = PassthroughSubject<CurrentMusic?, Never>()
+protocol DataPubliserProtocol {
+    func updateCurrent(music: PodcastResponse)
+    func removeCurrentMusic()
+    func updateCurrentMusicTime(time: Double, percent: Float)
+    var current: CurrentMusic? { get }
+}
+
+final class DataPublisher: DataPubliserProtocol {
+    let musicPublishSubject = PassthroughSubject<CurrentMusic?, Never>()
 
     private var currentMusic: CurrentMusic?
+    
+    init(currentMusic: CurrentMusic? = nil) {
+        self.currentMusic = currentMusic
+    }
+    
     var current: CurrentMusic? {
-        return currentMusic
+        currentMusic
     }
 
     func updateCurrent(music: PodcastResponse) {
         guard currentMusic?.music != music else { return }
         currentMusic = CurrentMusic(music: music, time: 0, percent: 0)
-        dataUpdated.send(currentMusic)
+        musicPublishSubject.send(currentMusic)
     }
 
     func removeCurrentMusic() {
         currentMusic = nil
-        dataUpdated.send(nil)
+        musicPublishSubject.send(nil)
     }
 
     func updateCurrentMusicTime(time: Double, percent: Float) {
         guard let music = currentMusic else { return }
         currentMusic = music.copyWith(time: time, percent: percent)
-        dataUpdated.send(currentMusic)
+        musicPublishSubject.send(currentMusic)
     }
 }

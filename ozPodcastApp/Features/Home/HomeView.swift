@@ -76,7 +76,7 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
     }
 
     private func setupBindings() {
-        AppContainer.shared.dataPublisher.dataUpdated
+        AppContainer.shared.dataPublisher.musicPublishSubject
             .receive(on: DispatchQueue.main)
             .sink { [weak self] current in
                 self?.handleCurrentMusicUpdate(current)

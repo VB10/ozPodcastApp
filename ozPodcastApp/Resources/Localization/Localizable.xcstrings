@@ -18,6 +18,17 @@
         }
       }
     },
+    "home_detail_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Now Playing"
+          }
+        }
+      }
+    },
     "home_new_podcast" : {
       "extractionState" : "manual",
       "localizations" : {

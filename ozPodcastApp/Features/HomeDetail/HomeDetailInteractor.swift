@@ -11,12 +11,30 @@ import Foundation
 import RealmSwift
 
 final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
+    private let database: LocalDatabaseProtocol
+    private let networkManager = AppContainer.shared.network
+    private var isPlayedFirstTime: Bool = true
+    private var podcast: PodcastResponse
+
+    private lazy var musicManager: MusicManager = {
+        let manager = MusicManager(delegate: self)
+        return manager
+    }()
+
+    private var dataPublisher: DataPubliserProtocol {
+        AppContainer.shared.dataPublisher
+    }
+
+    var presenter: InteractorToPresenterHomeDetailProtocol? {
+        didSet {
+            presenter?.initialLoad(podcast: podcast)
+        }
+    }
+
     func addToDatabase(path: String) {
         let modelToAdd = PodcastResponseRealm.from(response: podcast, localPath: path)
         database.add(model: modelToAdd)
     }
-
-    private let database: LocalDatabaseProtocol
 
     init(podcast: PodcastResponse, presenter: InteractorToPresenterHomeDetailProtocol? = nil, database: LocalDatabaseProtocol) {
         self.podcast = podcast
@@ -27,17 +45,6 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
     func checkCurrentPlay() {
         checkCurrentIsCont()
     }
-
-    var presenter: InteractorToPresenterHomeDetailProtocol? {
-        didSet {
-            presenter?.initialLoad(podcast: podcast)
-        }
-    }
-
-    private let networkManager = AppContainer.shared.network
-    private var isPlayedFirstTime: Bool = true
-    private var podcast: PodcastResponse
-    let realm = try? Realm()
 
     func addToLibrary() async {
         guard let id = podcast.id else { return }
@@ -57,11 +64,6 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
 
         presenter?.addedLibraryItems(result: true, path: path)
     }
-
-    private lazy var musicManager: MusicManager = {
-        let manager = MusicManager(delegate: self)
-        return manager
-    }()
 
     func stopMusicPlayer() {
         musicManager.pause()
@@ -85,7 +87,10 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
     }
 
     func checkCurrentIsCont() {
-        guard let currentMusic = AppContainer.shared.dataPublisher.current else { return }
+        guard let currentMusic = dataPublisher.current else {
+            updateCurrentMusicForGeneral()
+            return
+        }
         guard currentMusic.music == podcast && currentMusic.time > 0 else {
             return
         }
@@ -93,10 +98,8 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
         presenter!.updateTimerValue(currentTime: currentMusic.time, percent: currentMusic.percent)
     }
 
-    private func updateCurrentMusicForGeneral() -> Bool {
-        guard podcast != AppContainer.shared.dataPublisher.current?.music else { return false }
-        AppContainer.shared.dataPublisher.updateCurrent(music: podcast)
-        return true
+    private func updateCurrentMusicForGeneral() {
+        dataPublisher.updateCurrent(music: podcast)
     }
 
     func nextSeconds() {
