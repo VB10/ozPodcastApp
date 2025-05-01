@@ -10,10 +10,9 @@ import Foundation
 
 final class HomeDetailPresenter {
     // MARK: Properties
-
     private weak var view: PresenterToViewHomeDetailProtocol?
-    private weak var interactor: PresenterToInteractorHomeDetailProtocol?
-    private weak var router: PresenterToRouterHomeDetailProtocol?
+    private let interactor: PresenterToInteractorHomeDetailProtocol
+    private let router: PresenterToRouterHomeDetailProtocol
 
     init(interactor: PresenterToInteractorHomeDetailProtocol, router: PresenterToRouterHomeDetailProtocol, view: PresenterToViewHomeDetailProtocol) {
         self.interactor = interactor
@@ -25,45 +24,44 @@ final class HomeDetailPresenter {
 extension HomeDetailPresenter: ViewToPresenterHomeDetailProtocol {
     func musicToLibrary() {
         Task {
-            await interactor?.addToLibrary()
+            await interactor.addToLibrary()
         }
     }
 
     func backButtonTapped() {
-        router?.backToHome()
+        router.backToHome()
     }
 
     func openMusicRateSheet() {
-        router?.openSpeedRateDialog()
+        router.openSpeedRateDialog()
     }
 
     func peekMusicPlayer(item: PeekMusicItems) {
         switch item {
         case .next:
-            interactor?.nextSeconds()
+            interactor.nextSeconds()
         case .previous:
-            interactor?.backSeconds()
+            interactor.backSeconds()
         }
     }
 
     func startMusicPlayer() {
-        interactor?.startMusicPlayer()
+        interactor.startMusicPlayer()
     }
 
     func pauseMusicPlayer() {
-        interactor?.stopMusicPlayer()
+        interactor.stopMusicPlayer()
     }
 
     func close() {
-        interactor?.closeMusicPlayer()
+        interactor.closeMusicPlayer()
     }
 }
 
 extension HomeDetailPresenter: InteractorToPresenterHomeDetailProtocol, MainThreadRunnerType {
     func initialLoad(podcast: PodcastResponse) {
-
         view?.updateUI(podcast: podcast)
-        interactor?.checkCurrentPlay()
+        interactor.checkCurrentPlay()
     }
 
     func addedLibraryItems(result: Bool, path: String?) {
@@ -74,9 +72,7 @@ extension HomeDetailPresenter: InteractorToPresenterHomeDetailProtocol, MainThre
 
         guard let path = path else { return }
         runOnMainSafety {
-            guard let interactor = self.interactor else { return }
-
-            interactor.addToDatabase(path: path)
+            self.interactor.addToDatabase(path: path)
         }
     }
 

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HomeDetailView: BaseView<HomeDetailViewController> {
-    var delegate: ViewToPresenterHomeDetailProtocol?
+final class HomeDetailView: BaseView<HomeDetailViewController> {
+    var delegate: ViewToPresenterHomeDetailProtocol!
 
     private var isMusicPlaying: Bool = false
     override func setupView() {
@@ -17,22 +17,6 @@ class HomeDetailView: BaseView<HomeDetailViewController> {
         setupLayout()
         setupConstraints()
     }
-
-    private lazy var backButton: UIButton = {
-        let button = UIButton()
-        button.setImage(.backButton, for: .normal)
-        button.tintColor = ThemeManager.defaultTheme.themeColor.onPrimaryColor
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        return button
-    }()
-
-    private lazy var podcastTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = ThemeManager.defaultTheme.themeFont.sectionHeaderFontSize
-        label.textColor = ThemeManager.defaultTheme.themeColor.onPrimaryColor
-        label.text = "Now Playing"
-        return label
-    }()
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -46,14 +30,14 @@ class HomeDetailView: BaseView<HomeDetailViewController> {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.defaultTheme.themeFont.mainTitleFontSize
+        label.font = ThemeManager.defaultTheme.fontTheme.titleFont
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = ThemeManager.defaultTheme.themeFont.subtitleFontSize
+        label.font = ThemeManager.defaultTheme.fontTheme.titleFont
         return label
     }()
 
@@ -90,7 +74,7 @@ class HomeDetailView: BaseView<HomeDetailViewController> {
     private lazy var speedButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.gray, for: .normal)
-        button.setTitle("1X", for: .normal)
+        button.setTitle(SpeedRateItems.normal.title(), for: .normal)
         button.addTarget(self, action: #selector(speedButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -98,7 +82,7 @@ class HomeDetailView: BaseView<HomeDetailViewController> {
     private lazy var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = ThemeManager.defaultTheme.themeFont.subtitleFontSize
+        label.font = ThemeManager.defaultTheme.fontTheme.subTitleFont
         return label
     }()
 
@@ -127,30 +111,29 @@ class HomeDetailView: BaseView<HomeDetailViewController> {
 // Actions
 extension HomeDetailView {
     @objc func backButtonTapped() {
-        delegate?.backButtonTapped()
+        delegate.backButtonTapped()
     }
 
     @objc func playButtonTapped() {
-        guard let delegate = delegate else { return }
         !isMusicPlaying ? delegate.startMusicPlayer() : delegate.pauseMusicPlayer()
         isMusicPlaying = !isMusicPlaying
         controlMusicPlayingButton()
     }
 
     @objc func rewindButtonTapped() {
-        delegate?.peekMusicPlayer(item: .previous)
+        delegate.peekMusicPlayer(item: .previous)
     }
 
     @objc func forwardButtonTapped() {
-        delegate?.peekMusicPlayer(item: .next)
+        delegate.peekMusicPlayer(item: .next)
     }
 
     @objc func speedButtonTapped() {
-        delegate?.openMusicRateSheet()
+        delegate.openMusicRateSheet()
     }
 
     @objc func downloadIconTapped() {
-        delegate?.musicToLibrary()
+        delegate.musicToLibrary()
     }
 }
 
@@ -193,8 +176,6 @@ extension HomeDetailView {
     }
 
     private func setupLayout() {
-        addSubview(backButton)
-        addSubview(podcastTitleLabel)
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
@@ -206,23 +187,14 @@ extension HomeDetailView {
         addSubview(durationLabel)
         addSubview(downloadIcon)
 
+        setTitle("Now Playing")
+
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
         rewindButton.setPreferredSymbolConfiguration(largeConfig, forImageIn: .normal)
         forwardButton.setPreferredSymbolConfiguration(largeConfig, forImageIn: .normal)
     }
 
     func setupConstraints() {
-        backButton.snp.makeConstraints { make in
-            make.height.width.equalTo(25)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(15)
-            make.leading.equalToSuperview().offset(20)
-        }
-
-        podcastTitleLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(backButton.snp.centerY)
-            make.centerX.equalToSuperview()
-        }
-
         guard let imageViewHeight = imageView.image else { return }
         let aspectRatio = (imageViewHeight.size.height) / (imageViewHeight.size.width)
 
@@ -284,7 +256,7 @@ extension HomeDetailView {
     }
 }
 
-//
+// Preview
 #Preview {
     HomeDetailRouter.createModule(podcast: PodcastResponse.mock)
 }

@@ -56,7 +56,7 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         font: ThemeManager.defaultTheme.fontTheme.subTitleBoldFont,
         color: ThemeManager.defaultTheme.colorTheme.primaryColor
     )
-    
+
     private lazy var collectionPodcastView: UICollectionView = createCollectionView()
 
     override func setupView() {
@@ -66,7 +66,7 @@ final class HomeView: BaseView<HomeViewController>, HomeViewInput {
         setupBindings()
         collectionViewHelper = HomeCollectionViewHelper(collectionView: collectionPodcastView)
         collectionViewHelper?.delegate = self
-        
+
         setTitle(LocaleKeys.Home.title.localized())
     }
 
@@ -237,12 +237,6 @@ extension HomeView: OnGoingPodcastViewDelegate {
     func onGoingPodcastViewDidTap() {
         guard let onGoingPodcast = onGoingPodcast else { return }
         presenter?.didSelectPodcast(onGoingPodcast)
-    }
-
-    private func changeColorIndactor() {
-        runOnMain {
-            self.loadingIndicator.color = .red
-        }
     }
 }
 

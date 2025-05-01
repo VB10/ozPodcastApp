@@ -62,4 +62,18 @@ final class NetworkManager: NetworkManagerProtocol {
 
         return .success(responseValue)
     }
+    
+    func downloadFile(
+        withURL urlString: String,
+        destination: @escaping DownloadRequest.Destination
+    ) async -> Result<String, Error> {
+        guard let url = URL(string: urlString) else {
+            return .failure(NetworkError.unkown)
+        }
+        let downloadTask = AF.download(url, to: destination).serializingDownloadedFileURL()
+        guard let fileUrl = try? await downloadTask.value else {
+            return .failure(NetworkError.unkown)
+        }
+        return .success(fileUrl.path())
+    }
 }

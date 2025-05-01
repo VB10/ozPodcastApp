@@ -8,14 +8,21 @@
 import SnapKit
 import UIKit
 
+/// Speed Rate items
 enum SpeedRateItems: Float, CaseIterable {
-    case x1 = 1
-    case x1_25 = 1.25
-    case x1_5 = 1.5
-    case x1_75 = 1.75
-    case x2 = 2
-    case x2_5 = 2.5
-    case x3 = 3
+    case normal = 1
+    case normalPlus25 = 1.25
+    case normalPlus50 = 1.5
+    case normalPlus75 = 1.75
+    case double = 2
+    case doublePlus25 = 2.25
+    case doublePlus50 = 2.5
+    case doublePlus75 = 2.75
+    case triple = 3
+    
+    func title() -> String {
+        "\(Int(rawValue))X"
+    }
 }
 
 final class SpeedRateSheetViewController: UIViewController {
@@ -37,7 +44,7 @@ final class SpeedRateSheetViewController: UIViewController {
         let label = UILabel()
         label.text = Constants.speedRate
         label.textColor = .secondary
-        label.font = ThemeManager.defaultTheme.themeFont.mainTitleFontSize
+        label.font = ThemeManager.defaultTheme.fontTheme.titleFont
         label.textAlignment = .left
         return label
     }()

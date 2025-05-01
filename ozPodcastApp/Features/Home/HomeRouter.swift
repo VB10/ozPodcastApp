@@ -17,17 +17,17 @@ final class HomeRouter: HomeRouterInput {
         let viewController = HomeViewController()
         let interactor = HomeInteractor()
         let router = HomeRouter(viewController: viewController)
-        
+
         // Create presenter after view is initialized
         let presenter = HomePresenter(
             interactor: interactor,
             router: router,
             view: viewController.homeView
         )
-        
+
         // Set presenter to both view controller and view
         viewController.updatePresenter(presenter: presenter)
-        
+
         return viewController
     }
 
@@ -38,7 +38,7 @@ final class HomeRouter: HomeRouterInput {
     }
 
     func navigateToPodcast(podcastResponse: PodcastResponse) {
-//        viewController.present(HomeDetailRouter.createModule(podcast: podcastResponse))
+        viewController.present(HomeDetailRouter.createModule(podcast: podcastResponse))
     }
 
     func navigateToSearch() {

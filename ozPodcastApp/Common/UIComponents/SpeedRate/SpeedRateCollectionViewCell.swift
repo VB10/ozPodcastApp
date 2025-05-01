@@ -8,13 +8,13 @@
 import UIKit
 
 class SpeedRateCollectionViewCell: UICollectionViewCell {
-    var currentRate: SpeedRateItems = .x1
+    var currentRate: SpeedRateItems = .normal
     static let reuseIdentifier = String(describing: SpeedRateCollectionViewCell.self)
 
     private lazy var rateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = ThemeManager.defaultTheme.themeFont.subtitleFontSize
+        label.font = ThemeManager.defaultTheme.fontTheme.subTitleFont
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,7 +29,7 @@ class SpeedRateCollectionViewCell: UICollectionViewCell {
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
-        configure(with: .x1)
+        configure(with: .normal)
     }
 
     override init(frame: CGRect) {

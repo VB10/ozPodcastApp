@@ -16,9 +16,9 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
         database.add(model: modelToAdd)
     }
 
-    private let database: LocalDatabase
+    private let database: LocalDatabaseProtocol
 
-    init(podcast: PodcastResponse, presenter: InteractorToPresenterHomeDetailProtocol? = nil, database: LocalDatabase) {
+    init(podcast: PodcastResponse, presenter: InteractorToPresenterHomeDetailProtocol? = nil, database: LocalDatabaseProtocol) {
         self.podcast = podcast
         self.presenter = presenter
         self.database = database
@@ -34,7 +34,7 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
         }
     }
 
-    private let networkManager = AppContainers.networkManager
+    private let networkManager = AppContainer.shared.network
     private var isPlayedFirstTime: Bool = true
     private var podcast: PodcastResponse
     let realm = try? Realm()
@@ -85,7 +85,7 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
     }
 
     func checkCurrentIsCont() {
-        guard let currentMusic = AppContainers.dataPublisher.current else { return }
+        guard let currentMusic = AppContainer.shared.dataPublisher.current else { return }
         guard currentMusic.music == podcast && currentMusic.time > 0 else {
             return
         }
@@ -94,8 +94,8 @@ final class HomeDetailInteractor: PresenterToInteractorHomeDetailProtocol {
     }
 
     private func updateCurrentMusicForGeneral() -> Bool {
-        guard podcast != AppContainers.dataPublisher.current?.music else { return false }
-        AppContainers.dataPublisher.updateCurrent(music: podcast)
+        guard podcast != AppContainer.shared.dataPublisher.current?.music else { return false }
+        AppContainer.shared.dataPublisher.updateCurrent(music: podcast)
         return true
     }
 
@@ -120,6 +120,6 @@ extension HomeDetailInteractor: MusicManagerProtocol {
         }
 
         presenter!.updateTimerValue(currentTime: time, percent: percent)
-        AppContainers.dataPublisher.updateCurrentMusicTime(time: time, percent: percent)
+        AppContainer.shared.dataPublisher.updateCurrentMusicTime(time: time, percent: percent)
     }
 }

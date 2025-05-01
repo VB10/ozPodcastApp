@@ -16,6 +16,11 @@ protocol NetworkManagerProtocol {
         body: Encodable?,
         parameter: Parameters?
     ) async -> Result<T, Error>
+    
+    func downloadFile(
+        withURL urlString: String,
+        destination: @escaping DownloadRequest.Destination
+    ) async -> Result<String, Error>
 }
 
 extension NetworkManagerProtocol {

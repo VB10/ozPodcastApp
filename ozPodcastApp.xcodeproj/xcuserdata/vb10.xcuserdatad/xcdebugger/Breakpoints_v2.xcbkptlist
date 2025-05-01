@@ -130,6 +130,36 @@
             endingLineNumber = "39"
             landmarkName = "NewPodcasCollectionCell"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FE864E5A-D72E-4E77-9836-8F764D8C7F72 - eece6bd7628c5467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ozPodcastApp.NewPodcasCollectionCell.__allocating_init(frame: __C.CGRect, podcast: ozPodcastApp.PodcastResponse) -&gt; ozPodcastApp.NewPodcasCollectionCell"
+                  moduleName = "ozPodcastApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vb10/Desktop/development/native/ozPodcastApp/ozPodcastApp/Features/Home/VI%CC%87ew/NewPodcasCollectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "FE864E5A-D72E-4E77-9836-8F764D8C7F72 - cda121e82701df85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ozPodcastApp.NewPodcasCollectionCell.init(frame: __C.CGRect, podcast: ozPodcastApp.PodcastResponse) -&gt; ozPodcastApp.NewPodcasCollectionCell"
+                  moduleName = "ozPodcastApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vb10/Desktop/development/native/ozPodcastApp/ozPodcastApp/Features/Home/VI%CC%87ew/NewPodcasCollectionCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

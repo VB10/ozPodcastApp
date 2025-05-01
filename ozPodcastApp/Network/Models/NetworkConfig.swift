@@ -15,6 +15,6 @@ struct NetworkConfig {
     }
 
     init() {
-        self.baseUrl = "https://itunes.apple.com/us/rss/toppodcasts/limit=100/json"
+        self.baseUrl = "http://localhost:8080"
     }
 }

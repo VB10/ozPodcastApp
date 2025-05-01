@@ -71,7 +71,6 @@ final class HomeCollectionViewHelper: NSObject, UICollectionViewDataSource, UICo
     // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.row < items.count else { return }
         let selectedItem = items[indexPath.row]
         // Call the delegate method
         delegate?.didSelectItem(item: selectedItem)

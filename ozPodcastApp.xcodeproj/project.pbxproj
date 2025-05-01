@@ -28,6 +28,12 @@
 		54A255DF2C840EF4001738CC /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255DE2C840EF4001738CC /* NetworkManagerProtocol.swift */; };
 		54A255E72C841014001738CC /* ozPodcastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255E62C841014001738CC /* ozPodcastAppTests.swift */; };
 		54A255F12C841065001738CC /* NetworkManagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */; };
+		54ABD2CB2DA62B4E00594699 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C92DA62B4E00594699 /* HomeDetailView.swift */; };
+		54ABD2CC2DA62B4E00594699 /* HomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C62DA62B4E00594699 /* HomeDetailRouter.swift */; };
+		54ABD2CD2DA62B4E00594699 /* HomeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C52DA62B4E00594699 /* HomeDetailPresenter.swift */; };
+		54ABD2CE2DA62B4E00594699 /* HomeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C82DA62B4E00594699 /* HomeDetailInteractor.swift */; };
+		54ABD2CF2DA62B4E00594699 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C72DA62B4E00594699 /* HomeDetailViewController.swift */; };
+		54ABD2D02DA62B4E00594699 /* HomeDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABD2C42DA62B4E00594699 /* HomeDetailContract.swift */; };
 		54AD9EED2CAF6C15009E39B7 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */; };
 		54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */; };
 		54C964A42D83B90E00518D65 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 54C964A32D83B90E00518D65 /* Lottie */; };
@@ -64,6 +70,13 @@
 		54E09D832C756B0A00AD17FC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D822C756B0A00AD17FC /* ThemeManager.swift */; };
 		54E09D852C756BF300AD17FC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 54E09D842C756BF300AD17FC /* Localizable.xcstrings */; };
 		54E09D872C756CB300AD17FC /* LocaleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E09D862C756CB300AD17FC /* LocaleKeys.swift */; };
+		54E692862DC187B800A8247B /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = 54E692852DC187B800A8247B /* FittedSheets */; };
+		54E692892DC18CB600A8247B /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 54E692882DC18CB600A8247B /* BottomSheet */; };
+		54E6928D2DC18CF300A8247B /* SpeedRateSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6928B2DC18CF300A8247B /* SpeedRateSheetViewController.swift */; };
+		54E6928E2DC18CF300A8247B /* SpeedRateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6928A2DC18CF300A8247B /* SpeedRateCollectionViewCell.swift */; };
+		54E692902DC18EF500A8247B /* NetworkFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6928F2DC18EF200A8247B /* NetworkFile.swift */; };
+		54E692982DC192CD00A8247B /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E692962DC192CD00A8247B /* MusicManager.swift */; };
+		54E6929A2DC192D600A8247B /* MusicDocumentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E692992DC192D300A8247B /* MusicDocumentHelper.swift */; };
 		54EB8D8E2C6C28CD0049AEC6 /* NavigationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8D8D2C6C28CD0049AEC6 /* NavigationViewProtocol.swift */; };
 		54EB8D912C6C29430049AEC6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54EB8D902C6C29430049AEC6 /* SnapKit */; };
 		54F5B8352D83AADA00134EA6 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5B8322D83AADA00134EA6 /* HomeRouter.swift */; };
@@ -81,7 +94,6 @@
 		54FC8AA22C62E6DD0025A13B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 54FC8AA12C62E6DD0025A13B /* Swinject */; };
 		54FC8AA72C62E7240025A13B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 54FC8AA62C62E7240025A13B /* Kingfisher */; };
 		54FC8AB22C62E8030025A13B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 54FC8AB12C62E8030025A13B /* Toast */; };
-		54FC8AB62C62E8BD0025A13B /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 54FC8AB52C62E8BD0025A13B /* BottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +153,12 @@
 		54A255E42C841014001738CC /* ozPodcastAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ozPodcastAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A255E62C841014001738CC /* ozPodcastAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ozPodcastAppTests.swift; sourceTree = "<group>"; };
 		54A255F02C841065001738CC /* NetworkManagerDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDemoTests.swift; sourceTree = "<group>"; };
+		54ABD2C42DA62B4E00594699 /* HomeDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailContract.swift; sourceTree = "<group>"; };
+		54ABD2C52DA62B4E00594699 /* HomeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailPresenter.swift; sourceTree = "<group>"; };
+		54ABD2C62DA62B4E00594699 /* HomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRouter.swift; sourceTree = "<group>"; };
+		54ABD2C72DA62B4E00594699 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		54ABD2C82DA62B4E00594699 /* HomeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailInteractor.swift; sourceTree = "<group>"; };
+		54ABD2C92DA62B4E00594699 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		54AD9EEC2CAF6C15009E39B7 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPubliser.swift; sourceTree = "<group>"; };
 		54C964A62D83B94E00518D65 /* PodcastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastResponse.swift; sourceTree = "<group>"; };
@@ -173,6 +191,11 @@
 		54E09D822C756B0A00AD17FC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		54E09D842C756BF300AD17FC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		54E09D862C756CB300AD17FC /* LocaleKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleKeys.swift; sourceTree = "<group>"; };
+		54E6928A2DC18CF300A8247B /* SpeedRateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRateCollectionViewCell.swift; sourceTree = "<group>"; };
+		54E6928B2DC18CF300A8247B /* SpeedRateSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRateSheetViewController.swift; sourceTree = "<group>"; };
+		54E6928F2DC18EF200A8247B /* NetworkFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFile.swift; sourceTree = "<group>"; };
+		54E692962DC192CD00A8247B /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		54E692992DC192D300A8247B /* MusicDocumentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDocumentHelper.swift; sourceTree = "<group>"; };
 		54EB8D8D2C6C28CD0049AEC6 /* NavigationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewProtocol.swift; sourceTree = "<group>"; };
 		54F5B82C2D83AADA00134EA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		54F5B82D2D83AADA00134EA6 /* NewPodcasCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodcasCollectionCell.swift; sourceTree = "<group>"; };
@@ -203,7 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54FC8AA72C62E7240025A13B /* Kingfisher in Frameworks */,
-				54FC8AB62C62E8BD0025A13B /* BottomSheet in Frameworks */,
+				54E692892DC18CB600A8247B /* BottomSheet in Frameworks */,
+				54E692862DC187B800A8247B /* FittedSheets in Frameworks */,
 				54D8B0732C6D7A9A00749F67 /* RealmSwift in Frameworks */,
 				54FC8A9D2C62E6700025A13B /* Alamofire in Frameworks */,
 				54EB8D912C6C29430049AEC6 /* SnapKit in Frameworks */,
@@ -292,6 +316,19 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		54ABD2CA2DA62B4E00594699 /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				54ABD2C42DA62B4E00594699 /* HomeDetailContract.swift */,
+				54ABD2C52DA62B4E00594699 /* HomeDetailPresenter.swift */,
+				54ABD2C62DA62B4E00594699 /* HomeDetailRouter.swift */,
+				54ABD2C72DA62B4E00594699 /* HomeDetailViewController.swift */,
+				54ABD2C82DA62B4E00594699 /* HomeDetailInteractor.swift */,
+				54ABD2C92DA62B4E00594699 /* HomeDetailView.swift */,
+			);
+			path = HomeDetail;
+			sourceTree = "<group>";
+		};
 		54AD9EEB2CAF6C00009E39B7 /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +340,7 @@
 		54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				54E692972DC192CD00A8247B /* Music */,
 				54AD9EEF2CAF6DF6009E39B7 /* DataPubliser.swift */,
 			);
 			path = SubFeatures;
@@ -361,6 +399,24 @@
 				54E09D6E2C75671300AD17FC /* ButtonTheme.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		54E6928C2DC18CF300A8247B /* SpeedRate */ = {
+			isa = PBXGroup;
+			children = (
+				54E6928A2DC18CF300A8247B /* SpeedRateCollectionViewCell.swift */,
+				54E6928B2DC18CF300A8247B /* SpeedRateSheetViewController.swift */,
+			);
+			path = SpeedRate;
+			sourceTree = "<group>";
+		};
+		54E692972DC192CD00A8247B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				54E692992DC192D300A8247B /* MusicDocumentHelper.swift */,
+				54E692962DC192CD00A8247B /* MusicManager.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		54EB8D662C6C26A20049AEC6 /* Core */ = {
@@ -422,6 +478,7 @@
 		54EB8D6C2C6C27010049AEC6 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				54E6928C2DC18CF300A8247B /* SpeedRate */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -449,6 +506,7 @@
 		54EB8D6F2C6C27320049AEC6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				54ABD2CA2DA62B4E00594699 /* HomeDetail */,
 				54AD9EEE2CAF6DD9009E39B7 /* SubFeatures */,
 				5412C25E2CF941CD009971C9 /* OnBoard */,
 				54F5B8342D83AADA00134EA6 /* Home */,
@@ -512,6 +570,7 @@
 		54EB8D772C6C276C0049AEC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				54E6928F2DC18EF200A8247B /* NetworkFile.swift */,
 				54A255D62C840AD8001738CC /* NetworkConfig.swift */,
 				54A255DA2C840BDC001738CC /* NetworkMethod.swift */,
 				54A255DC2C840E1D001738CC /* NetworkError.swift */,
@@ -574,9 +633,9 @@
 		54F5B8342D83AADA00134EA6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				54F5B82F2D83AADA00134EA6 /* Vİew */,
 				5434E0DB2D9CF2F900CA04AE /* HomeCollectionViewHelper.swift */,
 				54F5B82C2D83AADA00134EA6 /* HomeView.swift */,
-				54F5B82F2D83AADA00134EA6 /* Vİew */,
 				54F5B8302D83AADA00134EA6 /* HomeInteractor.swift */,
 				54F5B8312D83AADA00134EA6 /* HomePresenter.swift */,
 				54F5B8322D83AADA00134EA6 /* HomeRouter.swift */,
@@ -664,10 +723,11 @@
 				54FC8AA12C62E6DD0025A13B /* Swinject */,
 				54FC8AA62C62E7240025A13B /* Kingfisher */,
 				54FC8AB12C62E8030025A13B /* Toast */,
-				54FC8AB52C62E8BD0025A13B /* BottomSheet */,
 				54EB8D902C6C29430049AEC6 /* SnapKit */,
 				54D8B0722C6D7A9A00749F67 /* RealmSwift */,
 				54C964A32D83B90E00518D65 /* Lottie */,
+				54E692852DC187B800A8247B /* FittedSheets */,
+				54E692882DC18CB600A8247B /* BottomSheet */,
 			);
 			productName = ozPodcastApp;
 			productReference = 54FC8A5A2C62D8E20025A13B /* ozPodcastApp.app */;
@@ -709,9 +769,10 @@
 				54FC8AA82C62E73E0025A13B /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				54FC8AAB2C62E7C40025A13B /* XCRemoteSwiftPackageReference "realm-swift" */,
 				54FC8AB02C62E8030025A13B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
-				54FC8AB42C62E8BD0025A13B /* XCRemoteSwiftPackageReference "BottomSheet" */,
 				54EB8D8F2C6C29420049AEC6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				54F5B83C2D83AC3C00134EA6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				54E692842DC187B800A8247B /* XCRemoteSwiftPackageReference "FittedSheets" */,
+				54E692872DC18CB600A8247B /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			productRefGroup = 54FC8A5B2C62D8E20025A13B /* Products */;
 			projectDirPath = "";
@@ -811,6 +872,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54DDEBB42C8A751900345146 /* RealmDatabase.swift in Sources */,
+				54E692982DC192CD00A8247B /* MusicManager.swift in Sources */,
 				54A255D52C84097A001738CC /* NetworkManager.swift in Sources */,
 				54A255DB2C840BDC001738CC /* NetworkMethod.swift in Sources */,
 				54FC8A5E2C62D8E20025A13B /* AppDelegate.swift in Sources */,
@@ -823,6 +885,8 @@
 				5412C26D2CF9A484009971C9 /* ButtonPadding.swift in Sources */,
 				5412C2652CF941DE009971C9 /* OnBoardInteractor.swift in Sources */,
 				5412C2662CF941DE009971C9 /* OnBoardViewController.swift in Sources */,
+				54E6928D2DC18CF300A8247B /* SpeedRateSheetViewController.swift in Sources */,
+				54E6928E2DC18CF300A8247B /* SpeedRateCollectionViewCell.swift in Sources */,
 				5412C2672CF941DE009971C9 /* OnBoardPresenter.swift in Sources */,
 				5412C2682CF941DE009971C9 /* OnBoardView.swift in Sources */,
 				5412C2692CF941DE009971C9 /* OnBoardContract.swift in Sources */,
@@ -830,6 +894,8 @@
 				54E09D6F2C75671300AD17FC /* ButtonTheme.swift in Sources */,
 				54C964AD2D83BC5B00518D65 /* BaseInteractor.swift in Sources */,
 				54C964B22D83BE0F00518D65 /* SystemIcons.swift in Sources */,
+				54E692902DC18EF500A8247B /* NetworkFile.swift in Sources */,
+				54E6929A2DC192D600A8247B /* MusicDocumentHelper.swift in Sources */,
 				54A255DD2C840E1D001738CC /* NetworkError.swift in Sources */,
 				54E09D692C7565AD00AD17FC /* ThemeColor.swift in Sources */,
 				54C964AA2D83B9B700518D65 /* MainThread+Weakify.swift in Sources */,
@@ -854,6 +920,12 @@
 				54D8B0702C6D792500749F67 /* BaseView.swift in Sources */,
 				54E09D6D2C7566CD00AD17FC /* TextFieldTheme.swift in Sources */,
 				54AD9EF02CAF6DF6009E39B7 /* DataPubliser.swift in Sources */,
+				54ABD2CB2DA62B4E00594699 /* HomeDetailView.swift in Sources */,
+				54ABD2CC2DA62B4E00594699 /* HomeDetailRouter.swift in Sources */,
+				54ABD2CD2DA62B4E00594699 /* HomeDetailPresenter.swift in Sources */,
+				54ABD2CE2DA62B4E00594699 /* HomeDetailInteractor.swift in Sources */,
+				54ABD2CF2DA62B4E00594699 /* HomeDetailViewController.swift in Sources */,
+				54ABD2D02DA62B4E00594699 /* HomeDetailContract.swift in Sources */,
 				54C964B02D83BC8100518D65 /* GeneralService.swift in Sources */,
 				5412C2702CF9A5A1009971C9 /* ProductRadius.swift in Sources */,
 			);
@@ -1121,6 +1193,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		54E692842DC187B800A8247B /* XCRemoteSwiftPackageReference "FittedSheets" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gordontucker/FittedSheets";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+		54E692872DC18CB600A8247B /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gaetanomatonti/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 		54EB8D8F2C6C29420049AEC6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1185,14 +1273,6 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		54FC8AB42C62E8BD0025A13B /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/joomcode/BottomSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.5;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1210,6 +1290,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54FC8AAB2C62E7C40025A13B /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		54E692852DC187B800A8247B /* FittedSheets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54E692842DC187B800A8247B /* XCRemoteSwiftPackageReference "FittedSheets" */;
+			productName = FittedSheets;
+		};
+		54E692882DC18CB600A8247B /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54E692872DC18CB600A8247B /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
 		};
 		54EB8D902C6C29430049AEC6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1235,11 +1325,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54FC8AB02C62E8030025A13B /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
-		};
-		54FC8AB52C62E8BD0025A13B /* BottomSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54FC8AB42C62E8BD0025A13B /* XCRemoteSwiftPackageReference "BottomSheet" */;
-			productName = BottomSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

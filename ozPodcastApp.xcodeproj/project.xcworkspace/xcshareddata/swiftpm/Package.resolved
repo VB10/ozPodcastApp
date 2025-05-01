@@ -1,5 +1,5 @@
 {
-  "originHash" : "c707a32f1bc8a2fdedf7fa6812a0eb8b9ffe757bde50dc4f0f2bee22dd25f316",
+  "originHash" : "cb4c09aa58899ceac216b59ba8a89b0939b5a1a7a4a5438da119c8a17a639515",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -13,10 +13,10 @@
     {
       "identity" : "bottomsheet",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/joomcode/BottomSheet",
+      "location" : "https://github.com/gaetanomatonti/BottomSheet",
       "state" : {
-        "revision" : "15ab2cf96b757b72b09a6515f667685ff55924e1",
-        "version" : "2.0.5"
+        "revision" : "d4fa33e036cf40e88a648501aacae23db8805564",
+        "version" : "0.4.1"
       }
     },
     {
@@ -35,6 +35,15 @@
       "state" : {
         "revision" : "678d442c6f7828def400a70ae15968aef67ef52d",
         "version" : "1.8.3"
+      }
+    },
+    {
+      "identity" : "fittedsheets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gordontucker/FittedSheets",
+      "state" : {
+        "revision" : "ba34781367fb7c947e2a19334318cf440c92968c",
+        "version" : "2.7.1"
       }
     },
     {

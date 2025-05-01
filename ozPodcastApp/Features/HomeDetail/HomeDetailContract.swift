@@ -33,7 +33,7 @@ protocol ViewToPresenterHomeDetailProtocol: AnyObject {
 
 protocol PresenterToInteractorHomeDetailProtocol: AnyObject {
     var presenter: InteractorToPresenterHomeDetailProtocol? { get }
-    init(podcast: PodcastResponse, presenter: InteractorToPresenterHomeDetailProtocol?, database: LocalDatabase)
+    init(podcast: PodcastResponse, presenter: InteractorToPresenterHomeDetailProtocol?, database: LocalDatabaseProtocol)
     func stopMusicPlayer()
     func startMusicPlayer()
     func nextSeconds()
@@ -60,8 +60,6 @@ protocol PresenterToRouterHomeDetailProtocol: AnyObject {
     func openSpeedRateDialog()
     func backToHome()
 }
-
-
 
 enum PeekMusicItems {
     case next

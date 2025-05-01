@@ -18,16 +18,14 @@ protocol HomeInteractorOutput: AnyObject {
 
 final class HomeInteractor: BaseInteractor, HomeInteractorProtocol {
     weak var output: HomeInteractorOutput?
-    internal let generalService: GeneralServiceProtocol
-    
+    let generalService: GeneralServiceProtocol
+
     init(generalService: GeneralServiceProtocol = GeneralService()) {
         self.generalService = generalService
     }
-    
+
     func getPodcasts() async -> [PodcastResponse] {
-        // Remove mock data in production
-         return [PodcastResponse.mock]
         let response = await generalService.podcast()
-        return response ?? []
+        return response ?? [PodcastResponse.mock]
     }
 }

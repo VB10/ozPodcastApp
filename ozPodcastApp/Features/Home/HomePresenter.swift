@@ -17,15 +17,16 @@ final class HomePresenter: HomePresenterProtocol {
     private let interactor: HomeInteractorProtocol
     private let router: HomeRouterInput
     private weak var view: HomeViewInput?
-    
+
     init(interactor: HomeInteractorProtocol,
          router: HomeRouterInput,
-         view: HomeViewInput) {
+         view: HomeViewInput)
+    {
         self.interactor = interactor
         self.router = router
         self.view = view
     }
-    
+
     func viewDidLoad() {
         guard let view = view else { return }
         Task { @MainActor in
@@ -35,11 +36,11 @@ final class HomePresenter: HomePresenterProtocol {
             view.showLoading(false)
         }
     }
-    
+
     func didSelectPodcast(_ podcast: PodcastResponse) {
         router.navigateToPodcast(podcastResponse: podcast)
     }
-    
+
     func didTapSearch() {
         router.navigateToSearch()
     }
