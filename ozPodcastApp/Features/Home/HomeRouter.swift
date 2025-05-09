@@ -1,37 +1,47 @@
 //
-//  TestVbRouter.swift
+//  HomeRouter.swift
 //  PodcastApp
 //
-//  Created by vb10 on 1.02.2024.
-//
+//  Created by Beyza Karadeniz on 27.01.2024.
 //
 
 import Foundation
-import UIKit
 
-final class HomeRouter: PresenterToRouterHomeProtocol {
-    // MARK: Static methods
+protocol HomeRouterInput: AnyObject {
+    func navigateToPodcast(podcastResponse: PodcastResponse)
+    func navigateToSearch()
+}
 
-    static func createModule() -> UIViewController {
+final class HomeRouter: HomeRouterInput {
+    static func build() -> HomeViewController {
         let viewController = HomeViewController()
         let interactor = HomeInteractor()
-        let router = HomeRouter(navigation: viewController)
-        let presenter: ViewToPresenterHomeProtocol & InteractorToPresenterHomeProtocol = HomePresenter(
-            interactor: interactor, router: router, view: viewController)
+        let router = HomeRouter(viewController: viewController)
 
-        viewController.presenter = presenter
-        interactor.presenter = presenter
+        // Create presenter after view is initialized
+        let presenter = HomePresenter(
+            interactor: interactor,
+            router: router,
+            view: viewController.homeView
+        )
+
+        // Set presenter to both view controller and view
+        viewController.updatePresenter(presenter: presenter)
 
         return viewController
     }
 
-    let navigation: NavigationView
+    let viewController: NavigationView
 
-    init(navigation: NavigationView) {
-        self.navigation = navigation
+    init(viewController: NavigationView) {
+        self.viewController = viewController
     }
 
-    func navigateToDetail() {
-//        navigation.present(<#T##viewController: UIViewController##UIViewController#>)
+    func navigateToPodcast(podcastResponse: PodcastResponse) {
+        viewController.present(HomeDetailRouter.createModule(podcast: podcastResponse))
+    }
+
+    func navigateToSearch() {
+//        viewController.pushWithNavigationController(SearchRouter.createModule())
     }
 }

@@ -14,8 +14,13 @@ protocol NetworkManagerProtocol {
         method: NetworkMethod,
         type: T.Type,
         body: Encodable?,
-        paramater: Parameters?
+        parameter: Parameters?
     ) async -> Result<T, Error>
+    
+    func downloadFile(
+        withURL urlString: String,
+        destination: @escaping DownloadRequest.Destination
+    ) async -> Result<String, Error>
 }
 
 extension NetworkManagerProtocol {
@@ -24,8 +29,8 @@ extension NetworkManagerProtocol {
         method: NetworkMethod,
         type: T.Type,
         body: Encodable? = nil,
-        paramater: Parameters? = nil
+        parameter: Parameters? = nil
     ) async -> Result<T, Error> {
-        return await send(path: path, method: method, type: type, body: body, paramater: paramater)
+        return await send(path: path, method: method, type: type, body: body, parameter: parameter)
     }
 }

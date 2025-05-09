@@ -8,5 +8,5 @@
 import Foundation
 
 struct ThemeManager {
-    static let deafultTheme: AppTheme = LighTheme()
+    static let defaultTheme: AppTheme = LighTheme()
 }

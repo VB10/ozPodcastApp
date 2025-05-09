@@ -1,31 +1,29 @@
 //
-//  HomeViewController.swift
-//  ozPodcastApp
+//  DashboardViewController.swift
+//  PodcastApp
 //
-//  Created by vb10 on 14.08.2024.
-//
+//  Created by Beyza Karadeniz on 1.01.2024.
 //
 
 import UIKit
 
 final class HomeViewController: UIViewController, NavigationView {
-    // MARK: - Lifecycle Methods
+    private var presenter: HomePresenterProtocol!
+
+    lazy var homeView: HomeView = {
+        let view = HomeView(self)
+        view.backgroundColor = .primary
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = HomeView(self)
+        view = homeView
+        presenter.viewDidLoad()
     }
-    
-    // MARK: - Properties
 
-    var presenter: ViewToPresenterHomeProtocol!
-}
-
-extension HomeViewController: PresenterToViewHomeProtocol {
-    func showMessage(message: String) {
-        let alert = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
-        alert.show(self, sender: nil)
+    func updatePresenter(presenter: HomePresenterProtocol) {
+        self.presenter = presenter
+        homeView.setPresenter(presenter)
     }
-    
-    // TODO: Implement View Output Methods
 }

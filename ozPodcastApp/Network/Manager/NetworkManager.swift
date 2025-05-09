@@ -24,17 +24,16 @@ final class NetworkManager: NetworkManagerProtocol {
     ///   - method: HttpMethod
     ///   - type: Generic Decodable Type
     ///   - body: Nullable or Encodable
-    ///   - paramater: Query parms. etc.
+    ///   - parameter: Query parms. etc.
     /// - Returns: Result with sucses responre or error
     func send<T: Decodable>(
-        path: NetworkPathProtocol,
-        // TODO: NetworkMethod global
+        path: NetworkPath,
         method: NetworkMethod,
         type: T.Type,
         body: Encodable? = nil,
-        paramater: Parameters? = nil
+        parameter: Parameters? = nil
     ) async -> Result<T, Error> {
-        let url = config.baseUrl + path.value
+        let url = "\(config.baseUrl)/\(path.rawValue)"
         let reqeust: DataRequest
 
         // TODO: Seperate client object
@@ -49,7 +48,7 @@ final class NetworkManager: NetworkManagerProtocol {
             reqeust = AF.request(
                 url,
                 method: method.alamofireMethod,
-                parameters: paramater
+                parameters: parameter
             )
         }
 
@@ -62,5 +61,19 @@ final class NetworkManager: NetworkManagerProtocol {
         }
 
         return .success(responseValue)
+    }
+    
+    func downloadFile(
+        withURL urlString: String,
+        destination: @escaping DownloadRequest.Destination
+    ) async -> Result<String, Error> {
+        guard let url = URL(string: urlString) else {
+            return .failure(NetworkError.unkown)
+        }
+        let downloadTask = AF.download(url, to: destination).serializingDownloadedFileURL()
+        guard let fileUrl = try? await downloadTask.value else {
+            return .failure(NetworkError.unkown)
+        }
+        return .success(fileUrl.path())
     }
 }

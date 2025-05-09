@@ -1,19 +1,31 @@
 //
 //  HomeInteractor.swift
-//  ozPodcastApp
+//  PodcastApp
 //
-//  Created by vb10 on 14.08.2024.
-//
+//  Created by Beyza Karadeniz on 27.01.2024.
 //
 
 import Foundation
 
-final class HomeInteractor: PresenterToInteractorHomeProtocol {
-    func saveLikeIndexToDatabase(index: Int) {
-        ///
-    }
-    
-    // MARK: Properties
+protocol HomeInteractorProtocol {
+    func getPodcasts() async -> [PodcastResponse]
+}
 
-    var presenter: InteractorToPresenterHomeProtocol?
+protocol HomeInteractorOutput: AnyObject {
+    func podcastsFetched(_ podcasts: [PodcastResponse])
+    func podcastsFetchFailed(_ error: Error)
+}
+
+final class HomeInteractor: BaseInteractor, HomeInteractorProtocol {
+    weak var output: HomeInteractorOutput?
+    let generalService: GeneralServiceProtocol
+
+    init(generalService: GeneralServiceProtocol = GeneralService()) {
+        self.generalService = generalService
+    }
+
+    func getPodcasts() async -> [PodcastResponse] {
+        let response = await generalService.podcast()
+        return response ?? [PodcastResponse.mock]
+    }
 }

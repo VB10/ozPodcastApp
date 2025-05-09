@@ -9,4 +9,12 @@ import Foundation
 
 struct NetworkConfig {
     let baseUrl: String
+
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+
+    init() {
+        self.baseUrl = "http://localhost:8080"
+    }
 }
